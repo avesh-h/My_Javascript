@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            
+        }
+    </style>
+</head>
+<body>
+ <script>
+
+
+/*Presentation of Multidimensional Array in Html By Table form*/
+
+
+let arr=[
+
+['harry',18,'male',"b.com"],
+["sunny",19,"male","BCA"],
+["Sarah",18,"Male","BCA"],
+["Tom",17,"Male","B.E"]
+
+     ];
+
+
+     document.write("<table border='1px'>")
+
+ for(let a=0;a<4;a++){
+
+    document.write("<tr>")
+
+     for(let b =0;b<4;b++){
+
+document.write("<td>"+arr[a][b]+"</td>"+"<br>")
+
+     }
+
+     document.write("</tr>")
+ }
+
+ document.write("</table>")
+
+ </script>   
+</body>
+</html>

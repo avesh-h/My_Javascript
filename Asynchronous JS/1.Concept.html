@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="sync">
+        asfbjb
+    </p>
+
+    <p class="async">
+        safj
+    </p>
+
+<script>
+//This is Basic understanding of synchronous and asynchronous programming
+//Synchronous Example
+
+//In this programme first para text change then alert come and then after ok color of para will changed that means programme will executed synchronously one after one.
+
+let sync = document.querySelector('.sync')
+
+sync.textContent="Hello my name is avesh"
+
+alert('Text is changed!')
+
+sync.style.color="red"
+
+
+
+//In this example programme will be executed asynchronously paragraph timing will run in backgroud but color of border change first then paragraph is changed
+//One task is ruunning in background and then execute the second line of code
+    let async = document.querySelector('.async')
+
+    setTimeout(function(){
+
+        async.textContent="Rohit is software devloper"
+
+    },5000)
+    async.style.border="1px solid red"
+
+
+
+
+    
+
+</script>    
+</body>
+</html>

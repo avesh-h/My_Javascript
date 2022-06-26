@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   
+<button id="btn">Stop</button>
+
+
+
+
+    <script>
+// setTimeout(main,2000)
+
+
+// function main(){
+
+// let q = confirm("Are You logged in?")
+
+// if(q==true){
+
+//    clearTimeout() 
+// }
+// else{
+//    main()
+// }
+
+// }
+
+// setTimeout(function() {
+//   setTimeout(function() {
+//   alert('2 sconds')
+//   }, 1000);
+// }, 1000);
+
+
+
+
+// function doSomething() {
+//     console.log("10 seconds");
+//     setTimeout(doSomething, 2000);
+// }
+
+// setTimeout(doSomething, 2000);
+
+
+                                               //SetTimeout Function Works like Setinterval Function
+
+let btn = document.getElementById('btn')                                               
+
+function TheInterval(){
+
+ alert('This is not set By Setinterval function')
+
+ let stop= setTimeout(TheInterval,2000)
+
+                       //For Cancellation of Timeout
+
+ btn.addEventListener('click',StopIt)
+
+function StopIt(){
+
+clearTimeout(stop)
+
+}
+
+
+}
+
+
+ setTimeout(TheInterval,2000)
+
+
+
+
+
+
+// let fire = clearTimeout(stop)
+
+
+
+
+
+    </script>
+</body>
+</html>

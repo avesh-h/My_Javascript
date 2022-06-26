@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+
+
+    <!--Bootstarp Files-->
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  
+  
+  
+
+
+
+
+<style>
+
+ /* .note-card{
+    visibility: hidden;
+  }
+  .active{
+    visibility: visible;
+  }
+  */
+</style>
+
+</head>
+<body>
+                                                    <!--Navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" id="searchtxt" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+                                                 <!--Add Note-->
+
+<div class="container my-3">
+<div class="card add-card">
+    <div class="card-body">
+      <h5 class="card-title">Add a Note:</h5>
+      <div class="form-floating">
+        <textarea class="form-control"  id="addText" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Write Here</label>
+      </div>
+      <button id="add" class="btn btn-primary my-3">Add Note</button>
+    </div>
+  </div>
+</div>
+
+
+                            <!--Card-->
+
+<div class="container-fluid my-2 mx-2" id="notes">
+
+</div>
+<!--<div class="card note-card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Note</h5>
+      <p class="card-text"></p>
+      <button id="delete" class="btn btn-danger">Delete Note</button>
+    </div>
+  </div>
+</div>-->
+
+
+
+           <!--Bootstrap Js File-->
+
+<script src="js/bootstrap.js"></script>
+
+
+
+<script>
+
+shownotes();
+
+
+let AddBtn = document.getElementById('add')
+
+let DelBtn = document.getElementById('delete')
+
+let addtxt = document.getElementById('addText')
+
+
+
+
+AddBtn.addEventListener('click',function(e){
+
+let notes = localStorage.getItem("notes")
+
+
+
+if(notes == null){
+
+   notesobj = [];
+}
+else{
+   notesobj = JSON.parse(notes)
+}
+
+notesobj.push(addtxt.value);
+ localStorage.setItem('notes', JSON.stringify(notesobj))
+ addtxt.value = ""
+
+ console.log(notesobj)
+
+ shownotes();
+
+
+})
+
+
+
+                                          //Function to show added Note
+
+function shownotes(){
+
+  let notes = localStorage.getItem("notes")
+
+
+
+if(notes == null){
+
+   notesobj = [];
+}
+else{
+   notesobj = JSON.parse(notes)
+}
+
+let html = " "
+
+notesobj.forEach(function(element,index){
+  
+html+= `
+<div class="card note-card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Note${index+ 1}</h5>
+      <p class="card-text">${element}</p>
+      <button id="${index}" onclick ="deleteNote(this.id)" class="btn btn-danger">Delete Note</button>
+    </div>
+  </div>
+ `
+
+
+});
+
+let noteelm = document.getElementById('notes')
+
+if(notesobj.length != 0){
+  noteelm.innerHTML = html
+}
+else{
+  noteelm.innerHTML = '<h2>Nothing is added yet</h2>'
+}
+
+
+
+}
+
+
+                        //This is function is used to delete the note
+
+
+function deleteNote(index){
+
+  console.log('deleted')
+
+  let notes = localStorage.getItem("notes")
+
+
+
+if(notes == null){
+
+   notesobj = [];
+}
+else{
+   notesobj = JSON.parse(notes)
+}
+
+
+
+notesobj.splice(index, 1)
+
+localStorage.setItem('notes', JSON.stringify(notesobj))
+
+shownotes();
+
+
+}
+
+
+
+
+
+
+                                   //Searching Function
+
+
+
+
+let searchtxt = document.getElementById('searchtxt');
+
+searchtxt.addEventListener('input',function(){
+
+  let input = searchtxt.value.toLowerCase();
+
+let notecards = document.getElementsByClassName('note-card')
+
+Array.from(notecards).forEach(function(element){
+
+let cardtxt = element.getElementsByTagName('p')[0].innerHTML
+
+//console.log(cardtxt)
+
+if(cardtxt.includes(input)){
+
+  element.style.display = "block";
+}
+else{
+  element.style.display = "none";
+}
+
+
+}) 
+
+
+
+
+})
+  
+  
+
+
+
+</script>
+    
+</body>
+</html>

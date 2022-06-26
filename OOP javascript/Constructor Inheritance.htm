@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    
+
+<script>
+                                                  //Example of constructor inheritance
+
+
+// function employee(Name, Experience, Id, Salary){
+
+// this.name = Name;
+// this.exp = Experience;
+// this.id = Id;
+// this.salary = Salary;
+
+
+// }
+
+
+
+// var employee1 = new employee('Rohan',2,21,10000);
+
+
+// function programmer(name,Experience,id,salary,lang){
+
+//     employee.call(this,name,Experience,id,salary)                    //Inherite the Constructor
+
+//          this.lang = lang
+    
+
+
+// }
+
+
+// var employee2 = new programmer('avesh',2,23,12000,'javascript')
+
+
+
+
+
+
+                                                           //Example 2 of constructor inheritance with prototype inheritance
+
+
+
+const person = function(firstname,lastname,birthyear){
+
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.birthyear = birthyear; 
+
+}                              
+
+const student = function(firstname,lastname,birthyear,course){
+
+person.call(this,firstname,lastname,birthyear)                                              //Constructor inheritance
+
+this.course = course
+
+}
+
+
+person.prototype.calcAge = function(){
+
+console.log(2022 - this.birthyear)
+
+}
+
+student.prototype = Object.create(person.prototype)                                     //prototype Inheritance
+
+student.prototype.intro = function(){
+
+console.log(`hello My Name is ${this.firstname} ${this.lastname} and  my course is ${this.course}.`)
+
+}
+
+
+const mike = new student('mike','harper',1998,'CS')
+
+//student.prototype.constructor = student
+console.log(student)
+
+console.log(mike.calcAge())
+
+
+
+
+</script>    
+</body>
+</html>

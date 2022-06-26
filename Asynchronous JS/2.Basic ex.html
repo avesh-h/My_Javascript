@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+
+    <img src="" alt="" class="img">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat dolorum laudantium reprehenderit nemo aperiam consequuntur sunt, excepturi adipisci odit, ipsam, suscipit odio quas voluptatibus laborum explicabo enim. Fugit, quas odit!</p>
+
+<script>
+
+//In this example even img take lots of time to load in background but code will start execute next line of para code 
+//img.src is asynchronous code
+//In this code the img.src code line is make the whole code asyncronous not any callback function
+
+
+    let para = document.getElementsByTagName('p')[0]
+    let img = document.querySelector('.img')
+    img.src="nature2.jpg"
+
+    img.addEventListener('load',function(){
+
+        img.classList.add('add')
+
+    })
+    para.style.color="blue"
+    para.style.width="300px"
+
+
+</script>    
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<script>
+
+let name = 'avesh';
+name2 = 'shubham';
+name3 = 'rohan';
+name4 = 'raj';
+
+
+text = 'Hello how r u?'
+
+
+function prnt(name,text)            /*Create Function*/
+{
+    console.log('My name is ' + name);
+    console.log(text +" " + name);
+
+}
+
+prnt(name,text);                      /*Function calling*/
+prnt(name2,text);
+prnt(name3,text);
+prnt(name4,text);
+
+
+
+                                       /*Practice*/
+
+
+let a = 3;
+b = 4 ;
+c = a+b;
+
+function ans()
+{
+     console.log('A is '+ a + ' B is ' + b);
+}
+
+function show()
+{
+    console.log('The Answer is ' + c);
+}
+
+ans();
+show();
+
+
+
+//let nam1 = 'avesh'
+
+let nam2 = 'hasanfatta'
+
+
+//setTimeout(greet1,1000)
+
+function greet1(name){
+
+    console.log('good morning ' + name)
+
+}
+
+//setTimeout(greet2,3000)
+
+
+function greet2(name){
+
+   console.log("good night " +nam1 + nam2) 
+}
+
+
+greet1('bhavesh')
+
+
+
+//Example of function inside Function
+
+
+function cutPieces(fruit){
+    return fruit * 4
+}
+
+
+function juice(apples,oranges){
+
+const applePieces = cutPieces(apples)
+const orangePieces = cutPieces(oranges)
+
+return `This Juice is Made of ${applePieces} pieces of apple and ${orangePieces} pieces of orange`
+}
+
+
+const ready = juice(3,4)
+
+console.log(ready)
+
+
+</script>
+
+
+
+
+</head>
+<body>
+    
+
+    Hello world
+</body>
+</html>

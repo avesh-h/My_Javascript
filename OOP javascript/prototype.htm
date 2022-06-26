@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    
+
+
+
+
+
+
+<script>                
+                             //this is a Object constructor 
+
+// const person = function(name,birthyear,Experience){
+
+// this.name = name;
+// this.birthyear = birthyear;
+// this.exp = Experience
+
+
+// }
+
+
+
+// let avesh = new person('avesh',1998,2)
+
+
+
+                                       //here create the poperty for our object constructor to find age property by help of prototype feature
+
+
+// person.prototype.Age = function(){
+//     console.log( 2022 - this.birthyear)
+    
+// }
+
+// console.log(person)
+
+// avesh.Age();                                    //<- Property is added and i can find the age of the person age by created property
+
+
+
+
+
+
+                                               //Example of added the full name function inside constructor by prototype
+
+
+// function People(first, last, age, eye) {
+//   this.firstName = first;
+//   this.lastName = last;
+//   this.age = age;
+//   this.eyeColor = eye;
+// }
+
+// People.prototype.fullname = function() {
+//   return this.firstName + " " + this.lastName
+// };
+
+// const myFather = new People("John", "Doe", 50, "blue");
+
+
+// console.log(myFather.fullname())
+
+
+
+
+                                                          //Example of simple added property
+
+
+// person.prototype.nationality = 'indian'
+
+// console.log(avesh.nationality)
+
+// console.log(avesh.__proto__)
+
+
+
+
+//console.log(person)
+
+
+
+
+
+
+
+
+function Person() {
+    this.name = 'John'
+}
+
+// adding property 
+Person.prototype.name = 'Peter';
+Person.prototype.age = 23
+
+const person1 = new Person();
+
+console.log(person1.name); // John
+console.log(person1.age); // 23
+
+
+
+                                                //Second way of add object instead of constructor function
+
+
+
+const protoperson = {
+
+calcAge(){
+  console.log(2022 - this.birthyear)
+},
+
+nationality : 'english',
+
+
+info(firstname,birthyear){
+  this.firstname = firstname;
+  this.birthyear = birthyear;
+
+}
+
+}
+
+
+
+const steve = Object.create(protoperson)               //Inherite the object in steve
+
+steve.name = 'john'
+steve.birthyear = 1996
+
+steve.calcAge()
+
+console.log(steve.nationality)
+
+console.log(steve)
+
+const sarah = Object.create(protoperson)
+
+sarah.info('sarah',1997)
+
+sarah.calcAge()
+
+console.log(sarah)
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

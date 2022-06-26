@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+
+<script>
+
+
+    const arrow = (birthyear,firstname)=>{
+
+const age = 2022 - birthyear
+const retirementYear = 65 - age;
+
+return `the employee name ${firstname} is left ${retirementYear} years for retirement`
+
+    }
+
+
+const emp1 = arrow(1998,'rohan')
+const emp2 = arrow(1993,'Khan')
+
+
+console.log(emp1)    
+
+console.log(emp2
+
+)  
+
+
+
+
+
+//Examples
+
+
+function calcAvg(s1,s2,s3){
+    return (s1+s2+s3)/3
+}
+
+
+let Davg = calcAvg(44,23,71);
+let Kavg = calcAvg(65,54,49);
+
+function checkWin(avgD,avgK){
+    if(avgD >=  2*avgK){
+        console.log('Dolphins')
+
+    }
+    else if(avgD >= 2*avgK){
+        console.log('Koalas')
+    }
+    else{
+        console.log("No one")
+    }
+}
+
+checkWin(Davg,Kavg);
+
+ Davg = calcAvg(85,54,41);
+ Kavg = calcAvg(23,34,27);
+
+ checkWin(Davg,Kavg);
+
+
+</script>
+
+</body>
+</html>

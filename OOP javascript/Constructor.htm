@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #demo{
+        border: 1px solid red;
+    }
+
+        </style>
+</head>
+<body>
+
+<div id="demo">
+
+</div>
+    
+
+ <script>
+                                           //OOP create constructor
+                                    
+function employee(Name, Experience, Id, Salary){
+
+    this.name = Name;
+    this.exp = Experience;
+    this.id = Id;
+    this.salary = Salary;
+
+
+}
+
+
+
+                 //new keyword always create new object for the constructor
+                 
+var employee1 = new employee('Rohan',2,21,10000);
+
+
+ document.getElementById('demo').innerHTML = employee1.name + "," +"<br>"+ employee1.exp + "," +"<br>"+ employee1.id + "," +"<br>"+ employee1.salary
+
+
+
+
+
+
+
+
+
+
+
+
+
+var employee2 = new employee('ronak',3,11,12000)
+
+
+
+
+                                                   //Example with Prototype 
+
+
+const car = function(name,speed){
+
+   this.name = name;
+   this.speed = speed; 
+
+}
+
+car.prototype.acceleration = function(){ 
+    
+    this.speed += 10
+    console.log(this.speed+'Km/h')
+
+}
+
+car.prototype.brake = function(){
+
+    this.speed  -= 5
+
+    console.log(this.speed+'Km/h')
+}
+
+// car.hey = function(){
+//     console.log('hey cars')
+// }
+let bmw = new car('bmw',120)
+
+let mercedes = new car('mercedes',95)
+
+bmw.acceleration()
+bmw.acceleration()
+bmw.brake()
+bmw.acceleration()
+bmw.brake()
+bmw.acceleration()
+
+
+bmw.brake()
+
+// car.hey();
+
+console.log(car)
+
+ </script>   
+</body>
+</html>

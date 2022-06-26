@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quaerat ab similique nesciunt, praesentium nobis, voluptas, quos cumque ipsum commodi corrupti perferendis. Eum!
+    </p>
+
+    
+<button id="btn" onclick="showhide()">
+    show/hide
+</button>
+
+
+<script>
+
+                             /*ADD MOUSE HOVER EVENT IN PARAGRAPH*/
+
+let para = document.getElementById('para');
+
+
+para.addEventListener('mouseover',function run(){
+
+
+    alert('You are inside the paragraph.')
+
+});
+
+
+function showhide(){
+
+let btn = document.getElementById('btn');
+let para = document.getElementById('para');
+
+if(para.style.display != 'none'){
+
+    para.style.display = 'none';
+}
+
+else{
+
+    para.style.display = 'block';
+}
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>

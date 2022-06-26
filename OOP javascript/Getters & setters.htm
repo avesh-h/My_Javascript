@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<p id="demo">
+
+</p>
+
+
+
+
+<script>
+
+                              //Set and Get work as a Property but not a function we can call them as a property but not a function
+
+
+
+const obj = {
+   count: 0,
+
+
+ set  add(val){
+
+    return this.count+=val
+    
+ },
+
+get reset(){
+    return this.count = 0;
+},
+
+get increment(){
+    return this.count++
+},
+
+get decrement(){
+
+    return this.count--
+},
+
+set subtract(val){
+    return this.count-=val
+}
+
+}
+
+           //Properties calling
+
+obj.add = 2;
+obj.decrement
+obj.add = 10;
+obj.subtract=8
+
+document.getElementById('demo').innerHTML = obj.count
+
+console.log(obj)
+
+
+
+
+
+
+
+
+                                                                    //Example 2
+
+class car{
+
+    constructor(name,speed){
+
+        this.name = name;
+        this.speed = speed;
+
+    }
+
+
+ acceleration(){
+
+this.speed+=10;
+console.log( this.speed)
+
+}
+
+
+break(){
+
+this.speed-=5;
+console.log( this.speed)
+
+}
+
+
+get speedUs(){
+    console.log( this.speed / 1.6 + 'mi/h')
+}
+
+set speedUs(curspeed){
+
+    this.speed = curspeed;
+     console.log( this.speed * 1.6 + 'km/h')
+}
+
+
+
+
+
+}                                                                           
+
+
+const car1 = new car('ford',120)
+
+// car1.speedUs;
+// car1.speedUs = 50
+// car1.acceleration()
+// car1.speedUs
+// car1.break()
+// car1.speedUs
+
+// console.log(car1)
+
+</script>    
+</body>
+</html>

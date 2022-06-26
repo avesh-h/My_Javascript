@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <ul id="ul">
+     <li>Home</li>
+     <li>About</li>
+     <li>Services</li>
+     <li>More</li>
+ </ul>   
+
+
+
+ <script>
+                                        //Target the Elements with siblingsElements and parentElements
+  //Remember appendChild() is used add element at the end 
+  //And insertBefore() is use to add element before any other Element
+  //replaceChild()is uesed replace the element place
+  //Removechild() is used to remove element                                  
+
+   let ul = document.getElementById('ul')
+
+   let replace = ul.firstElementChild
+
+   let about = ul.firstElementChild.nextElementSibling
+
+   let Services = about.nextElementSibling
+
+   let more = ul.lastElementChild
+
+ // ul.replaceChild(about,Services)
+
+
+console.log(about)
+
+  // console.log(replace)
+   let element = document.createElement('li')
+   
+   element.id = "added"
+   element.className = "added"
+  //  element.innerText = 'Contact Us'  //here text added with innerText
+
+
+                                 /*Added Text with textnode*/                        
+
+   let text = document.createTextNode("Contact Us")
+   element.appendChild(text)
+
+  // ul.appendChild(element)
+
+  // replace.replaceWith(element)
+
+  ul.replaceChild(element,Services)
+
+ // ul.removeChild(more)
+
+ let a = document.all
+
+ console.log(a)
+
+
+
+ let ele = document.createElement('li')
+
+ console.log(ele)
+
+ ele.className = 'NewAdded'
+
+ ele.id = 'NewOne'
+
+let InsideText = document.createTextNode('Added by the Dom Manipulation')
+
+ele.appendChild(InsideText)
+
+
+
+ ul.appendChild(ele)
+
+
+ let create = document.createElement('h4')
+
+ let body = document.all[6].firstElementChild.parentElement
+
+ create.textContent = 'This is My Items For Manipulations for DOM in javascript Tutorial'
+
+ body.insertBefore(create,ul)
+ 
+
+ </script>
+</body>
+</html>

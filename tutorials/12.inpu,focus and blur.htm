@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #highlight{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<form action="">
+Name:
+<input type="text"id="name" oninput="main(this)"><br><br>
+
+Number:
+<input type="text" id="number"><br><br><br>
+
+<div id="highlight">
+
+</div>
+
+
+
+
+</form> 
+
+
+
+<script>
+let name = document.getElementById("name");
+let number = document.getElementById("number");
+
+
+
+/*Focus And Blur */
+
+name.addEventListener("focus",function(){
+    this.style.background = 'red';
+})
+
+name.addEventListener("blur",function(){
+    this.style.background = '';
+})
+
+
+number.addEventListener("focus",function(){
+    this.style.background = 'red';
+})
+
+number.addEventListener("blur",function(){
+    this.style.background = '';
+})
+
+
+/*Input Event*/
+
+/*function main(element){
+
+    let x = element.value;
+    document.getElementById("highlight").innerHTML = x;
+
+
+
+}*/
+
+name.addEventListener("input",function(){
+
+  let x = element.value;
+  document.getElementById("heighlight").innerHTML = x;  
+
+})
+
+
+
+</script>
+    
+</body>
+</html>

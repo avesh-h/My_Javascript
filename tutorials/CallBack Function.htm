@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="display">
+
+</div>
+<div class="void">
+
+</div>
+
+
+<script>
+
+
+// Full Basic concept of call back example
+let greeting = function(){
+    document.querySelector('.void').innerHTML= name
+}
+
+let Person = function(first_callback){
+    Myname = "Avesh Welcome"
+    first_callback(name)
+}
+Person(greeting)
+
+
+
+
+    //CallBack Function
+    
+let myDisplay = function(display){
+
+document.querySelector('.display').innerHTML = display
+    
+}
+let doSum= function(num1,num2,myAns){
+    let sum = num1 + num2;
+    myAns(sum)
+}
+
+doSum(5,5,myDisplay)
+
+
+
+
+// Example 2
+
+let order = (call_production)=>{
+
+console.log('Please call the production for taking your order')
+
+call_production();
+
+}
+
+let production = ()=>{
+
+console.log('Your order is received Thank you..')
+
+}
+
+order(production)
+
+
+
+// Example 3
+
+// let printNum =function(the_callback){
+
+//     setTimeout(() => {
+//         console.log('1,2,3')
+//     }, 1000);
+//     the_callback()
+// }
+
+// let AddedNum = function(){
+
+//     setTimeout(function(){
+// console.log('4,5')
+//     },2000)
+// }
+
+// printNum(AddedNum)
+
+
+// Example 4
+
+// Below example is shows that how callback execute code
+// if we if we put call back inside sequence timeout then first printng will print then second one print will be print
+
+let Squence = function(the_callback){
+    setTimeout(() => {
+        console.log('This is the first printing')
+    }, 3000);
+    the_callback()
+}
+
+let Added = function(){
+    setTimeout(function(){
+console.log('this is second printng')
+    },1000)
+    
+}
+
+Squence(Added)
+// Added(Squence)
+
+
+
+
+// let doSomeThingWith = function(my_call){
+//     names.forEach(function(e){ 
+//     console.log(`The Name is ${e}`)
+// })
+// }
+
+// var names = ['George','Ringo','Paul','John'];
+// for(var i=0;i<names.length;i++){
+//     doSomeThingWith(names[i]);
+//     my_call()  
+// }
+
+
+</script>
+</body>
+</html>

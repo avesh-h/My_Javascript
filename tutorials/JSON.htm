@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+<script>
+
+let obj = {
+
+    name : 'avesh',
+    exp : 1,
+    language : 'English'
+
+}
+
+
+//document.write(obj.name + "<br>" + obj.exp)
+
+
+//Now conver into the json stringify
+
+
+let Jsonstr = JSON.stringify(obj)
+
+console.log(Jsonstr)
+
+
+Jsonstr = Jsonstr.replace('avesh','Avesh')
+
+
+
+console.log(Jsonstr)
+
+document.write(Jsonstr)
+
+
+//Now convert into  object again
+
+
+let newjson = JSON.parse(Jsonstr)
+
+console.log(newjson)
+
+</script>    
+</body>
+</html>

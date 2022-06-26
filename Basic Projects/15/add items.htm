@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!--Bootstarp Files-->
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+
+  <style>
+     
+
+li{
+    /* border: 1px solid red; */
+   margin-top: 1%;
+}
+li button{
+    position: relative;
+    left: 20%;
+   
+    color: white;
+}
+
+  </style>
+
+</head>
+<body>
+
+    
+                                                    <!--Navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" id="searchtxt" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+                                          <!-- Add Items -->
+
+    <div>
+
+     <h2>Add Items</h2>   
+<form action="">
+<input type="text" size="20" id="input">
+
+<input type="submit" value = 'Add Item' id="subBtn"> 
+
+    </form>
+
+
+<ul class="mt-5">
+    <li class="list-items" >Item 1 <button class="bg-danger">X</button></li>
+    <li class="list-items" >Item 2 <button class="bg-danger">X</button></li>
+    <li class="list-items" >Item 3 <button class="bg-danger">X</button></li>
+    <li class="list-items" >Item 4 <button class="bg-danger">X</button></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+ <!--Bootstrap Js File-->
+
+ <script src="js/bootstrap.js"></script>
+
+
+ <script>
+
+let SubBtn = document.getElementById('subBtn')
+
+let ul = document.querySelector('.mt-5')
+
+let DelBtn = document.querySelectorAll('.bg-danger')
+
+let SearchBox = document.getElementById('searchtxt')
+
+//  console.log(ul)
+
+//  console.log(DelBtn)
+
+// console.log(input)
+
+ul.addEventListener('click',RemoveEle)
+
+
+
+
+
+
+//Add EventListener
+
+SubBtn.addEventListener('click',AddEle)
+
+//Create Function For that
+
+function AddEle(e){
+
+e.preventDefault()    
+
+//Create Element
+let addItem = document.createElement('li')
+
+//Take input of Item
+var input = document.querySelector('#input').value
+
+// console.log(addItem)
+
+addItem.className = 'list-items'
+addItem.className = 'newAdded'
+
+//create text of createdElement
+let addTxt = document.createTextNode(input)
+
+
+//Paste input inside created Element
+addItem.appendChild(addTxt)
+
+//Create Button
+let addBtn = document.createElement('button')
+
+//Add class
+addBtn.className = 'bg-danger'
+
+//Add TExt
+addBtn.appendChild(document.createTextNode('X'))
+
+//added to Item
+addItem.appendChild(addBtn)
+
+
+//add Element to the ul
+ul.appendChild(addItem)
+
+
+
+
+}
+
+
+
+function RemoveEle(e){
+
+if(e.target.classList.contains('bg-danger')){
+   
+
+let con = confirm('Are Sure ?')
+if(con == true){
+
+var li = e.target.parentElement
+
+ ul.removeChild(li)
+}    
+
+
+}
+
+}
+
+                                      //Searching Function Of Example
+
+SearchBox.addEventListener('keyup',searching)
+
+
+function searching(e){
+
+let srchTxt = e.target.value.toLowerCase()
+// console.log(srchTxt)
+
+let items = ul.getElementsByTagName('li')
+
+// console.log(items)
+
+Array.from(items).forEach(function(item){
+
+let itemTxt = item.firstChild.textContent
+
+// console.log(item)
+
+if(itemTxt.toLowerCase().indexOf(srchTxt)!=-1){
+    item.style.display = 'block'
+}
+else{
+    item.style.display = 'none'
+}
+
+})
+
+
+
+
+}
+ </script>
+
+</body>
+</html>

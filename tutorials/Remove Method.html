@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            border: 2px dotted red ;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, totam reiciendis? Perferendis qui earum quos enim ipsum alias cupiditate repellendus unde at doloribus dolores dolorem, consequatur ipsam voluptatem ad iure.
+    </p>
+
+
+    <script>
+//This tutorial is about the remove the element
+
+        let para = document.getElementsByTagName('p')[0]
+        console.log(para)
+
+        let btn = document.createElement('button')
+        btn.innerText="click me to remove paragraph"
+
+        para.after(btn)
+
+        btn.addEventListener('click',function(){
+
+            para.remove()
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .add {
+
+        color: red;
+    }
+    .green{
+        color: green;
+    }
+</style>
+
+</head>
+<body>
+
+
+
+  <div class="div green">
+      <h1>jsakjfakjnfkw</h1>
+  </div>  
+
+  <button id="btn">
+      add
+  </button>
+
+
+
+<script>
+
+let div = document.querySelector('.div')
+
+let add = document.getElementById('btn')
+let h = div.firstElementChild
+
+console.log(h)
+
+//Below line is for check that div element contains h1 tag or not see in html
+
+
+console.log(div.contains(h))
+
+
+add.addEventListener('click',function(){
+
+
+div.setAttribute('class','add')
+
+ 
+})
+
+
+  </script>
+    
+</body>
+</html>

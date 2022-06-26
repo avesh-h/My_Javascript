@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+<script>
+  
+  
+const person = function(firstname,lastname,birthyear){
+
+this.firstname = firstname;
+this.lastname = lastname;
+this.birthyear = birthyear;
+
+}
+
+
+person.prototype.calcAge = function(){                                       //add Prototype property
+
+    console.log(2022 - this.birthyear)
+
+}
+
+
+const student = function(firstname,lastname,birthyear,course){
+
+person.call(this,firstname,lastname,birthyear);
+
+this.course = course
+
+}
+
+
+student.prototype = Object.create(person.prototype)                      //Prototype Inheritance
+
+student.prototype.fullname = function(){
+
+    console.log(this.firstname +" "+this.lastname)
+}
+
+
+const mike = new student('Mike','harper',2001,'CS')                          //create object 
+ 
+mike.fullname()
+
+console.log(student)
+
+
+
+
+
+
+const john = Object.create(student.prototype)       //or              //Create john object from the Mike object or student 
+
+// const john = Object.create(mike)
+
+
+john.firstname = 'john'
+john.lastname = 'wick'
+john.birthyear = 1999
+john.course = "Mechanical"
+
+
+
+
+john.fullname()
+john.calcAge()
+
+ console.dir(john)
+
+console.dir(student)
+</script>    
+</body>
+</html>

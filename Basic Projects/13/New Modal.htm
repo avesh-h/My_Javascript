@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .modal{
+            width: 500px;
+           height: 300px;
+            border: 2px solid grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            position: absolute;
+            top: 30%;
+            background-color: white;
+          
+           
+        }
+        .overlay{
+            /*border: 1px solid blue;*/
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            background-color: bisque;
+        }
+        .btns{
+            margin: 2%;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="btns">
+    <button class="btn">Show 1</button>
+    <button class="btn">Show 2</button>
+    <button class="btn">Show 3</button>
+</div>
+
+<div class="modal hidden">
+   <h4>
+       New Messages!
+   </h4>
+  <p>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias non temporibus tempora tempore, corporis saepe impedit explicabo suscipit enim nisi. Alias et suscipit voluptas nulla ab obcaecati eum ullam unde? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nostrum dicta veniam autem inventore, perferendis doloremque rem vel deserunt perspiciatis culpa voluptatibus provident assumenda minus quo, harum incidunt impedit nam!
+    </p>
+</div>
+
+<div class="overlay hidden">   
+</div>
+
+
+
+                                
+
+<script>
+
+                                     //Neat and clean javascript
+
+
+    let btns = document.querySelectorAll('.btns')
+
+    let modal = document.querySelector('.modal')
+
+    let overlay = document.querySelector('.overlay')
+
+
+    const open = function(){
+
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+
+    }
+
+    const close = function(){
+
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    }
+
+    
+btns.forEach(function(element){
+
+element.addEventListener('click',open)
+
+})
+
+overlay.addEventListener('click',close)
+
+ 
+
+
+
+
+</script>
+</body>
+</html>

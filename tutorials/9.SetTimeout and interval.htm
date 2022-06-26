@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+//timeout= setTimeout(main ,5000);  //Only Once
+
+
+
+//setInterval(main,3000);       //Repeatadly
+
+
+/*Create the function*/
+
+//function main(){
+
+/*let age = prompt('Enter your Age to see our Content.','Enter your Age');
+
+}*/
+/*clearTimeout(timeout);*/          //for close the time out
+
+
+
+                                /*Live Time*/
+
+document.getElementById('time')
+
+setInterval(displaytime, 1000);
+
+function displaytime(){                    //create function
+
+ time.innerHTML = Date();                    
+
+}
+
+
+
+
+
+
+
+
+</script>
+
+
+<body>
+    <h1>
+        Hello Welcome here.
+    </h1>
+
+   <h4 id="time">
+       Time is here
+   </h4>
+
+
+
+<button id="btn" onclick="timedisplay()">
+    Click Me to Display Time
+</button>
+
+
+
+
+
+
+<p id="demo" class="clock"></p>
+
+
+
+</body>
+</html>

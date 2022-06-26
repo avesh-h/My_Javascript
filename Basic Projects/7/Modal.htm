@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(ashish-acharya-TSOQ5tS1MwY-unsplash.jpg);
+    object-fit: cover;
+    background-position: center;
+}
+
+                                 /*Open Modal*/
+
+
+                                 
+.open-modal{
+    border: 3px solid rgb(0, 0, 0);
+    width: 700px;
+    height: 300px;
+    z-index: 10;
+    visibility: visible;
+    
+   
+
+}
+.open-modal h2{
+    display: flex;
+    justify-content: center;
+}
+#open{
+    position: absolute;
+    top: 50%;
+    left: 47%;
+}
+
+
+
+                                /*Close Modal*/
+
+
+
+.close-container{
+   /* border: 1px solid red;*/
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+   background-color: rgba(0, 255, 255,0.6);
+   z-index: -10;
+   visibility: hidden;
+}
+.active{
+    z-index: 11;
+    visibility: visible;
+}
+
+
+.close-modal{
+    border: 3px solid rgb(0, 0, 0);
+    width: 700px;
+    height: 200px;
+    position: absolute;
+    left: 610px;
+    display: flex;
+    justify-content: center;
+   
+
+}
+
+.close-modal button{
+ 
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    cursor: pointer;
+}
+#notice{
+    position: absolute;
+    top: 50%;
+}
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+<div class="open-modal">
+
+<h2>
+    To Open Modal
+</h2>
+
+<button id="open">
+    Open Modal
+</button>
+
+
+</div>   
+
+
+<div class="close-container">
+<div class="close-modal">
+
+    <h2>Modal</h2>
+
+    <p id="notice">
+       <b> Here This is Notice Type Modal</b>
+    </p>
+
+    <button id="close">
+        X
+    </button>
+</div>
+</div>
+  
+
+
+<script>
+
+let open = document.getElementById('open')
+
+let close = document.getElementById('close')
+
+let closeContainer = document.querySelector('.close-container')
+
+let openModal = document.querySelector('.open-modal')
+
+
+open.addEventListener('click',function(){
+
+closeContainer.classList.add('active')
+
+openModal.style.visibility = "hidden"
+
+})
+
+
+close.addEventListener('click',function(){
+
+    closeContainer.classList.remove('active')
+
+openModal.style.visibility = "visible"
+})
+
+
+</script>
+</body>
+</html>

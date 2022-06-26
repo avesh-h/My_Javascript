@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li id="li"> A first item </li>
+    </ul>
+
+
+<script>
+    //This Method give you whole collection of elemnts like array then you have to pick by numbers like array
+    // let UL = document.getElementsByTagName('ul')
+    // console.log(UL[0])
+    // let LI = document.getElementsByTagName('li')
+    // console.log(LI[0])
+
+    let ul = document.getElementById('ul')
+    console.log(ul)
+    let li = document.getElementById('li')
+    console.log(li)
+
+   //this li added with clonenode if value is true then it copy of previous li
+   let copy = li.cloneNode(true)
+   ul.appendChild(copy)
+
+   let add = li.cloneNode()
+   add.innerText = "I am added by clone node"
+   ul.appendChild(add)
+
+// For copy whole body code    
+// document.body.appendChild(document.body.cloneNode(true))
+</script>    
+</body>
+</html>

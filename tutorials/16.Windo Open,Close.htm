@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+  <button id="open">
+      Open Window
+  </button>  
+
+  <button id="close">
+      Close Window
+  </button>
+
+
+
+<script>
+                /*Tab Open In New Window*/
+
+ let open = document.getElementById('open')
+ var mywindow ;
+
+    open.addEventListener("click",()=>{
+
+       mywindow = window.open("http://www.facbook.com")
+
+        //this.open("http://www.facbook.com","_blank","width=500px,height,500px,left=300px , top=500px")
+    })
+
+
+
+           /*Tab open on only one window*/
+    
+   /* let mywindow = document.getElementById('button')
+
+    mywindow.addEventListener("click",()=>{
+
+        this.open("http://www.facbook.com")
+    })*/
+
+
+
+    /*Close Window*/
+
+   /* let close = document.getElementById("close");
+
+    close.addEventListener("click",()=>{
+        mywindow.close();
+
+        
+    })*/
+
+
+
+</script>  
+</body>
+</html>

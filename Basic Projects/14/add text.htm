@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    
+    <div class="basic-q">
+        <h2 class="header">Basic Question Page</h2>
+    </div>
+    
+    <div class="question-section">
+        <section class="que">
+    
+            <h3>Do you Accept Credit cards?</h3><button class="btn">&gt;</button>
+    <p  class="detail" >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam saepe explicabo quibusdam, asperiores qui nostrum nemo numquam neque dolore deserunt inventore, ad laudantium maiores nihil iste illum temporibus sint ipsam.
+    </p>
+        </section>
+    
+        <section class="que">
+            <h3>Do you Have anathor Business?</h3><button class="btn">&gt;</button>
+            <p class="detail">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam saepe explicabo quibusdam, asperiores qui nostrum nemo numquam neque dolore deserunt inventore, ad laudantium maiores nihil iste illum temporibus sint ipsam.
+            </p>
+        </section>
+    
+        <section class="que">
+            <h3>Is your Product 100% Natural?</h3><button class="btn">&gt;</button>
+            <p class="detail">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam saepe explicabo quibusdam, asperiores qui nostrum nemo numquam neque dolore deserunt inventore, ad laudantium maiores nihil iste illum temporibus sint ipsam.
+            </p>
+        </section>
+    
+    </div>
+    
+
+
+
+
+<script>
+
+
+                                //Create the element
+
+
+
+
+
+
+let element = document.createElement('div')
+element.className = "elem"
+element.id = "elem"
+
+
+let main = document.querySelector('.basic-q')
+
+let heading = document.querySelector('.header')
+
+//console.log(element,main,heading)
+
+                           //Add properties to that element and putting
+
+ let val = localStorage.getItem('text')
+ let text;
+
+ if(val == null){
+
+     text = document.createTextNode('Hello this is area you can write anything')
+ }
+ else{
+      text =  document.createTextNode(val)
+ }
+
+
+
+element.appendChild(text);
+element.setAttribute('style','border : 2px solid black; margin : 2% ; padding : 2%; width : 300px')
+
+main.appendChild(element,heading)
+
+
+element.addEventListener('click',function(){
+
+
+let notextArea = document.querySelectorAll('.addText').length
+if(notextArea == 0){
+
+let html = elem.innerHTML
+
+element.innerHTML = `<textarea class="form-control addText"  id="addText" style="height: 100px">${html}</textarea>`
+}
+
+
+
+let textArea = document.getElementById('addText')
+
+textArea.addEventListener('blur',function(){
+
+    elem.innerHTML = textArea.value
+    localStorage.setItem('text',textArea.value)
+})
+
+})
+
+
+</script>
+</body>
+</html>

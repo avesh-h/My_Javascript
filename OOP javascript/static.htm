@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    
+
+
+
+    
+<script> 
+
+
+                                       //Example of use of Static function in comparission
+                               
+  class person{
+
+
+static nationality = 'indian'
+
+constructor(firstname,lastname,birthyear){
+
+
+this.firstname = firstname;
+this.lastname = lastname;
+this.birthyear = birthyear 
+}
+
+
+
+calcAge(){
+return 2022 - this.birthyear
+}
+
+static compare(a,b){
+
+if(a > b){
+
+   console.log('first student has better grades ') 
+
+}
+else{
+    console.log('second student has better grades')
+}
+
+}
+
+}
+
+class students extends person{
+
+constructor(firstname,lastname,birthyear,marks){
+
+super(firstname,lastname,birthyear);
+
+this.marks = marks;
+}
+
+
+}
+
+
+const student1 = new students('samir','khan',1998,55)
+
+const student2 = new students ('brian','ortega',1998,34)
+
+// person.compare(student1.marks , student2.marks)
+
+
+
+console.log(students.nationality)
+
+
+
+
+
+                                                               //Example 2 use static as a print default Properties
+
+
+
+// class chair{
+//              //default props
+           
+//        static backsupport = 'yes'
+//        static armsupport = 'yes'
+//        static fourlegs = 'yes'
+       
+       
+  
+//  static defaultProps(){
+
+
+// console.log(`Does our chair provide backsupprot? = ${chair.backsupport}`)
+// console.log(`Does our chair provide armsupprot? = ${chair.armsupport}`)
+//  }      
+
+
+// }                                                               
+    
+// chair.defaultProps()  
+
+// console.log(chair)
+
+
+
+
+                                                               //Static in Normal Constructor
+
+
+function Circle(radius){
+
+ this.radius = radius
+
+
+ Circle.pi = 3.141;
+
+ this.calcArea = function(){
+
+return Circle.pi * this.radius * this.radius
+
+ }
+
+
+
+}
+
+
+const myCircle = new Circle(10)
+
+console.log(myCircle.calcArea())
+
+    </script>    
+</body>
+</html>

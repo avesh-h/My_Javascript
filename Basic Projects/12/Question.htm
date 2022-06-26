@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           
+        }
+        
+        .question-section p{
+            font-size: 25px;
+            width: 50%;
+            border: 2px solid gray;
+            background-color:whitesmoke ;
+            padding: 1%;
+            display: none;
+            transition: 0.5s ease-in;
+        }
+        .question-section .active{
+            display: block;
+        }
+
+         button{
+            border: none;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .rotate{
+            
+            transform: rotate(90deg);
+        }
+
+    </style>
+</head>
+<body>
+    
+<div class="basic-q">
+    <h2>Basic Question Page</h2>
+</div>
+
+<div class="question-section">
+    <section class="que">
+
+        <h3>Do you Accept Credit cards?</h3><button class="btn">&gt;</button>
+<p  class="detail" >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam saepe explicabo quibusdam, asperiores qui nostrum nemo numquam neque dolore deserunt inventore, ad laudantium maiores nihil iste illum temporibus sint ipsam.
+</p>
+    </section>
+
+    <section class="que">
+        <h3>Do you Have anathor Business?</h3><button class="btn">&gt;</button>
+        <p class="detail">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam saepe explicabo quibusdam, asperiores qui nostrum nemo numquam neque dolore deserunt inventore, ad laudantium maiores nihil iste illum temporibus sint ipsam.
+        </p>
+    </section>
+
+    <section class="que">
+        <h3>Is your Product 100% Natural?</h3><button class="btn">&gt;</button>
+        <p class="detail">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam saepe explicabo quibusdam, asperiores qui nostrum nemo numquam neque dolore deserunt inventore, ad laudantium maiores nihil iste illum temporibus sint ipsam.
+        </p>
+    </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+                                        /*Target THe Element By Parent and Children Method*/
+
+
+
+
+/*let btns = document.querySelectorAll('.btn')
+
+btns.forEach(function(btn){
+
+btn.addEventListener('click',function(e){
+
+const text = e.currentTarget.parentElement.children[2];
+
+
+text.classList.toggle('active')
+
+btn.classList.toggle('rotate')
+
+})    
+
+})*/
+
+
+                                    /*Target By question element section*/
+
+let questions = document.querySelectorAll('.que');
+
+let details = document.querySelectorAll('.detail')
+
+questions.forEach(function(each){
+
+const btn = each.querySelector('.btn')                          //Select by que section
+
+//console.log(btn)
+btn.addEventListener('click',function(e){
+
+
+  
+
+const detail = e.currentTarget.parentElement.children[2];
+
+
+
+details.forEach(function(item){
+
+if(item!==detail){
+
+    item.classList.remove('active')
+    
+}
+
+
+})
+
+btn.classList.toggle('rotate')
+
+detail.classList.toggle('active')
+
+
+
+})
+
+})
+
+
+
+
+</script>
+</body>
+</html>

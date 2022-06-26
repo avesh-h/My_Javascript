@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+
+  *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }  
+
+  body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+  #circle{
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition-duration: 3s;
+  }
+  .hover{
+      transform: scale(2);
+      box-shadow:5px 5px 5px  rgb(138, 138, 138);
+  }
+</style>
+
+
+
+
+
+
+
+</head>
+<body>
+    
+<div id="circle">
+    hover
+</div>
+
+
+<script>
+
+let circle = document.querySelector("#circle")
+
+circle.addEventListener("mouseenter",() => {
+
+if(!circle.classList.contains ("hover")){
+    circle.classList.add("hover");
+}
+
+})
+
+circle.addEventListener("mouseleave",()=>{
+
+    if(circle.classList.contains("hover")){
+    circle.classList.remove("hover");
+}
+
+})
+
+</script>
+</body>
+</html>

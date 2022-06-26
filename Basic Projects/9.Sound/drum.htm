@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+    }
+
+  body{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+  }  
+
+
+.click{
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+}    
+
+.press{
+    background-color: red;
+}
+</style>
+
+</head>
+<body>
+
+    
+
+
+<div class="click" id="w">w</div>
+<div class="click" id="a">a</div>
+<div class="click" id="s">s</div>
+<div class="click" id="d">d</div>
+<div class="click" id="q">q</div> 
+
+
+
+
+
+<script>
+
+   
+
+
+let doc= document.querySelectorAll('.click').length
+
+let W = document.getElementById('Wkey')
+let A = document.getElementById('Akey')
+let S = document.getElementById('Skey')
+let D = document.getElementById('Dkey')
+let Q = document.getElementById('Qkey')
+
+let all = document.querySelectorAll('.click')
+
+
+//Detect THe Mouse clickEvents
+
+
+for(let i=0;i<doc;i++){
+
+document.querySelectorAll('.click')[i].addEventListener('click',function(){
+
+var buttonhtml = this.innerHTML
+
+makesound(buttonhtml)   //function calling
+
+
+buttonAnimation(buttonhtml)
+
+
+})
+
+}
+
+
+
+//Detects the Keyboard key events
+
+document.addEventListener("keypress",function(e){
+
+    makesound(e.key);   //it takes parameter as a (event.key) ex. (w) or (a) or (s)     function calling
+    buttonAnimation(e.key)
+
+   
+    
+})
+
+
+
+
+
+function makesound(press)
+{
+
+    switch (press) {
+    case "w":
+     var kick1 = new Audio("tunes/kick1.mp3")
+     kick1.play(); 
+     break;
+
+
+
+        case "a":
+        var kick2 = new Audio("tunes/kick2.mp3")
+        kick2.play();
+        break;
+
+
+
+
+        case "s":
+       var kick3 = new Audio("tunes/kick3.mp3")
+       kick3.play();
+       break;
+
+
+
+       case "d":
+           var kick4 = new Audio("tunes/kick4.mp3")
+           kick4.play();
+
+
+           break;
+
+
+
+       case "q":
+           var kick5 = new Audio("tunes/kick5.mp3")
+           kick5.play() ;
+
+ 
+           break;
+           
+           
+
+    default: console.log("The Key is not available on the screen")
+
+  
+        
+
+    }
+
+}
+    
+
+
+
+document.addEventListener('keypress',function(event){
+
+    console.log(event)
+})
+
+
+
+function buttonAnimation(key){
+
+    //For W
+
+/*    if(key =='w'){
+
+W.classList.add('press')
+
+setTimeout(function (){
+
+    W.classList.remove('press')
+},100)
+
+}
+
+else{}
+
+
+
+//For A
+
+
+if(key=="a"){
+    A.classList.add('press')
+
+setTimeout(function (){
+
+    A.classList.remove('press')
+},100)
+
+}
+
+else{}
+
+
+//For S
+
+
+if(key=="s"){
+    S.classList.add('press')
+
+setTimeout(function (){
+
+    S.classList.remove('press')
+},100)
+
+}
+
+else{}
+
+
+//For D
+
+if(key=="d"){
+    D.classList.add('press')
+
+setTimeout(function (){
+
+    D.classList.remove('press')
+},100)
+
+}
+
+else{}
+
+
+//For Q
+
+if(key=="q"){
+    Q.classList.add('press')
+
+setTimeout(function (){
+
+    Q.classList.remove('press')
+},100)
+
+}
+
+else{}*/
+
+                               //OR
+
+var activekey = document.querySelector("#" + key )     //this key is parameter of the function
+
+activekey.classList.add("press")
+
+setTimeout(function(){
+
+    activekey.classList.remove("press")   
+},100)
+    
+}
+
+
+
+
+
+</script>
+    
+</body>
+</html>

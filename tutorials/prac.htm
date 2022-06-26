@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+    .container{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #sign-in{
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        width: 400px;
+        border: 1px solid red;
+        justify-content: center;
+        background-color: rgba(245, 245, 220,0.5);
+        display: none;
+        
+    }
+
+    
+    #cross{
+        width: 20px ;
+        height: 20px;
+        transform: translate(350px,-100px);
+       
+    }
+   
+
+
+
+</style>
+
+
+</head>
+<body>
+   <div class="container">
+
+<button id="log-in">
+    Log-in
+</button>
+
+
+<div id="sign-in">
+
+
+
+    <button id="cross">x</button>
+
+Name:
+<input type="text" placeholder="Enter name"><br>
+
+Password:
+<input type="password" id="password"><br><br>
+
+<a href="#" id="forshow">show</a>
+
+
+
+
+
+
+</div>
+
+
+
+   </div> 
+
+
+
+
+
+
+ <script>
+
+let login = document.getElementById('log-in')
+
+let signin = document.getElementById('sign-in')
+ 
+
+
+login.addEventListener('click',function(){
+
+signin.style.display = "flex"
+
+login.style.display = "none"
+
+})
+
+let cross = document.getElementById('cross')
+
+cross.addEventListener('click',function(){
+
+signin.style.display = "none"
+
+login.style.display = "block"
+
+
+})
+
+let show = document.getElementById('forshow')
+let password = document.getElementById('password')
+
+
+var state =false
+show.addEventListener("click",function(){
+
+    if(state == false){
+
+        password.setAttribute("type","text")
+
+        show.innerText = "hide"
+
+        state = true
+
+    }
+else{
+
+    password.setAttribute("type","password")
+
+    show.innerText = "show"
+
+        state = false
+}
+
+})
+
+ </script>  
+</body>
+</html>

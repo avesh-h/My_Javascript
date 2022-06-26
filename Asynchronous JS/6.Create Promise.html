@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+<script>
+
+    // Basic Example of Creatinf Promise Function
+
+let buildPromise = new Promise((res,rej)=>{
+
+      //Math.random() is function that guess the number between 0 to 1
+
+    if(Math.random() >= 0.5){                           
+        res('Your promise is resolved')
+    }
+    else{
+        rej(new Error('Sorry Promise is not resolved'))
+    }
+})
+
+buildPromise.then(res => console.log(res)).catch(rej=> console.log(rej))
+
+
+
+//Spread operator
+
+
+//From the Example you can see we can copy the raj some same props to the harry object 
+
+// const raj = {
+
+//     name: 'raj',
+//     age : 22,
+//     Occupation :'Programmer',
+//     language:'python',
+//     Salary : 22000
+// }
+
+
+// const harry ={
+
+//     ...raj,
+
+//     name: 'harry',
+//     language:'Java',
+//     age:24,
+
+// }
+
+
+
+// console.log(harry.Salary)
+
+</script>    
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+
+}
+
+
+.full-container{
+    position: fixed;
+    top: 0%;
+   /* border: 1px solid red;*/
+    background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;  
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+    
+    
+}
+.active{
+    opacity: 1;
+  pointer-events: all;
+}
+
+
+.full{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 85%;
+    transform: translate(-50%, -50%)  scale(0.5);
+   
+    
+
+}
+.full .active{
+    transform: translate(-50%,-50%)  scale(1);
+}
+.btn{
+    
+    font-size: 30px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+#cross-btn{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    font-size: 30px;
+}
+#forward{
+    position: absolute;
+    right: 3%;
+    font-size: 50px;
+}
+#backward{
+    position: absolute;
+    left: 3%;
+    font-size: 50px;
+}
+.img-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+}
+
+.img-half img{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    margin-left: 1%;
+    margin-top: 1%;
+    background-position: center;
+    cursor: pointer;
+}
+.img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+</style>
+
+</head>
+<body>
+ 
+<div class="img-container">
+
+<div class="img-half"
+><img src="images/half/alexander-popov-9vDdkxSCAD4-unsplash.jpg" alt="1" class="img" >
+</div>
+<div class="img-half">
+    <img src="images/half/boat.jpg" alt="2" class="img">
+</div>
+<div class="img-half">
+    <img src="images/half/daniel-canibano-gFU1ba7ygtI-unsplash.jpg" alt="3" class="img">
+</div>
+<div class="img-half">
+    <img src="images/half/game.jpg" alt="4" class="img">
+</div>
+<div class="img-half">
+    <img src="images/half/nature2.jpg" alt="5" class="img">
+</div>
+<div class="img-half">
+    <img src="images/half/nature3.jpg" alt="6" class="img">
+</div>
+<div class="img-half">
+    <img src="images/half/pexels-aleksandar-pasaric-2078076.jpg" alt="7" class="img">
+</div>
+<div class="img-half">
+    <img src="images/half/pexels-kaboompics-com-6250.jpg" alt="8" class="img">
+</div>
+<div class="img-half">
+    <img src="images/half/pexels-tima-miroshnichenko-5118498.jpg" alt="9" class="img">
+</div>
+<div class="img-half">
+    <img src="images/half/pexels-vishnu-r-nair-1105666.jpg" alt="10" class="img">
+</div>
+
+
+</div> 
+
+<div class="full-container">
+<button id="cross-btn" class="btn"> 
+    X
+</button>  
+
+<button class="btn" id="forward">
+   &gt;
+</button>
+
+<button class="btn" id="backward">
+    &lt;
+</button>
+
+<img src="images/good/1.jpg" alt="" class="full">  
+</div>
+
+
+
+
+<script>
+
+const gallery = document.querySelectorAll('.img-container')
+
+const modal = document.querySelector('.full-container')
+
+const fullimg = document.querySelector('.full')
+
+let cross = document.getElementById('cross-btn')
+
+gallery.forEach(function(img){
+
+img.addEventListener('click',function(){
+
+    
+
+    modal.classList.add('active')
+   fullimg.classList.add('active')
+
+    const originalQ = img.getAttribute("alt");
+    fullimg.src = `images/good/${originalQ}.jpg`;
+
+   
+    
+})
+
+})
+
+
+
+cross.addEventListener('click',function(){
+    modal.classList.remove('active')
+})
+</script>
+
+</body>
+</html>

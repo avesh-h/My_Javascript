@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <style>
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.bg{
+
+    object-fit: cover;
+    width: 30%;
+    height: 30%;
+
+}
+
+.bg:hover{
+    transform: scale(1.5);
+}
+.modal{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+   /* border: 1px solid red;*/
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.8);
+    opacity: 0;
+    pointer-events: none;
+    
+    
+}
+.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.full{
+   
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+ 
+   
+}
+#gt{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#cross{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    cursor: pointer;
+}
+#lt{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+ </style>   
+</head>
+<body>
+  
+    
+
+<div class="img-container">
+  <div class="img">
+      <img src="images/1.jpg" alt="1" class="bg">
+  </div>  
+  <div class="img">
+      <img src="images/2.jpg" alt="2" class="bg">
+  </div>
+</div>
+
+<div class="modal">
+    <img src="images/1.jpg" alt="" class="full">
+
+    <button id="cross">
+        X
+    </button>
+
+    <button id="gt">
+       &gt;
+    </button>
+    <button id="lt">
+     &lt;
+    </button>
+</div>
+
+
+
+<script>
+
+let gallery = document.querySelectorAll('.img-container')
+let modal =  document.querySelector('.modal')
+let full  = document.querySelector('.full')
+gallery.forEach(function(img){
+    img.addEventListener('click',function(){
+
+        
+if( !full.setAttribute('src','images/2.jpg')) {
+    full.setAttribute('src','images/1.jpg')
+    modal.classList.add('active')
+}
+   else{
+     full.setAttribute('src','images/2.jpg')  
+    modal.classList.add('active')
+   }     
+ 
+
+
+
+let gt = document.getElementById('gt')
+
+let lt = document.getElementById('lt')
+
+gt.addEventListener('click',function(){
+
+    full.src = `images/2.jpg`
+    
+})
+
+lt.addEventListener('click',function(){
+
+full.src = `images/1.jpg`
+
+})
+
+
+
+
+    })
+})
+
+
+
+
+
+let cross = document.getElementById('cross')
+
+cross.addEventListener('click',function(){
+    modal.classList.remove('active')
+})
+</script>
+</body>
+</html>

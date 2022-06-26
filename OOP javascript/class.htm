@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+<div class="demo">
+
+</div>
+
+
+    
+ <script>
+
+                                                            //Simple inheritance of class Example
+
+class employee{
+
+
+info(name){
+    this.name = name
+
+    console.log(name)
+
+}
+exp(num){
+
+    this.year = num
+    return 2022 - this.year
+}
+
+
+
+}
+
+
+class manager extends employee{
+
+
+   infom(man){
+   this.man= man
+   console.log("hello " + this.name +" "+ "i am manager "+ "my name is " + man)
+   }
+    
+}
+
+
+
+let a = new manager()
+a.info("avesh")
+a.exp(2001)
+a.infom("raj")
+
+
+console.log(a)
+
+console.log(manager)
+
+//console.log(manager.__proto__)
+
+
+
+
+
+                               
+                                                           /*SImple class Example*/
+
+
+
+// class car{
+
+// info(name,year){
+
+//     this.name = name;
+//     this.year = year;
+// }
+
+
+
+// }
+
+// let car1 = new car()
+
+// car1.info("ford",2018)
+
+// document.querySelector(".demo").innerHTML = car1.name + " " +car1.year
+
+
+
+
+
+
+class person{
+
+                                                     //this is difference between normal function and constructor function inside class
+
+   constructor(firstname,lastname,birthyear){
+
+
+this.firstname = firstname;
+this.lastname = lastname;
+this.birthyear = birthyear 
+}
+
+// intro(firstname,lastname,birthyear){
+
+
+// this.firstname = firstname;
+// this.lastname = lastname;
+// this.birthyear = birthyear 
+// }
+
+calcAge(){
+    return 2022 - this.birthyear
+}
+
+}
+
+
+const emp = new person('avesh','hasanfatta',1998)
+
+console.log(emp.calcAge())
+
+// emp.intro('avesh','hasanfatta',1998)                             //Normal prototype function way of pass parameters
+
+
+console.log(person)
+
+
+
+az = 25;
+
+console.log(az)
+
+
+
+
+                                                                           //Example
+
+
+
+
+ </script>   
+</body>
+</html>
