@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local storage tutorial</h1>
+    <form action="">
+        <h2>Insert Data</h2> 
+        <input type="text" placeholder="Enter here..." class="key"><br>
+        <input type="text" placeholder="Enter value..." class="value"><br>
+        <button class="btn">Insert Data</button>
+    </form>
+    <h2>Output</h2>
+    <div class="output_data" id="output"></div>
+
+<script>
+    let input_key = document.querySelector('.key')
+    let input_value = document.querySelector('.value')
+    let insert = document.querySelector('.btn')
+    let output = document.querySelector('.output_data')
+
+    // console.log(input_key)
+   insert.addEventListener('click',(e)=>{
+    e.preventDefault();
+    let key = input_key.value
+    // console.log(key)
+    let value = input_value.value
+
+    if(key && value){
+        localStorage.setItem(key,value)
+
+        // location.reload();
+    }
+    // if(key.length == 0 || value.length == 0){
+    //     output.innerHTML += `<h3>There is No Output Given By user</h3>`
+    // }
+    // console.log(key,value)
+
+    for(let i=0 ; i < localStorage.length ; i++){
+        let key = localStorage.key(i);
+        let value = localStorage.getItem(key)
+  
+    }
+    output.innerHTML += `${key}: ${value} <br/>`
+    if(key.length == 0 || value.length == 0){
+        input_key.style.border = '1px solid red';
+        input_value.style.border = '1px solid red';
+    }
+})
+
+
+</script>    
+</body>
+</html>

@@ -14,6 +14,28 @@
         
     </div>
  
-    <script src="map,filter,reduce.js"></script>
+    <!-- <script src="map,filter,reduce.js"></script> -->
+
+    <script>
+        const arr = [1,2,3,4,5]
+
+        const newArr=arr.reduce((acc,curr)=>{
+            // with only map
+            // acc.push(curr)
+
+            // with FIlter
+
+            if(curr > 1)
+            {
+                acc.push(curr)
+            }
+            return acc;
+        },[])
+
+        console.log(newArr)
+        
+
+    </script>
+
 </body>
 </html>

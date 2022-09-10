@@ -613,6 +613,8 @@ let OnReduce = arr14.reduce(function(acc,curr){
 
 sqrt = curr * curr
 
+// console.log(sqrt)
+
 if(sqrt % 2 == 0){
  
     acc.push(sqrt)
@@ -625,6 +627,26 @@ return acc
 console.log(OnReduce)
 
 
+
+// let my_arr = [...numbs]
+
+let initialVal = 0;
+const my_func = (...my_arr) =>{
+
+   let the_new = my_arr.forEach((item)=>{
+        if(item > initialVal)
+        {
+            initialVal = item
+        }
+       
+    })
+    return initialVal
+
+}
+
+let new_func = my_func(1,2,22,43,12)
+
+console.log(new_func)
 
 
 

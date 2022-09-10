@@ -15,58 +15,80 @@
 
 </div>
 
+<div id="show">
+
+</div>
+
 
 <script>
 
 
-// Full Basic concept of call back example
-let greeting = function(){
-    document.querySelector('.void').innerHTML= name
+// New Example
+
+//In this Below Example we passed function to render the result of the sum with call back function
+
+const myRenderData = (show) =>{
+    document.getElementById('show').innerHTML = show 
+} 
+
+const myCalc = (num1,num2,myRenderData) =>{
+    let result = num1 + num2;
+    return myRenderData(result)
 }
 
-let Person = function(first_callback){
-    Myname = "Avesh Welcome"
-    first_callback(name)
-}
-Person(greeting)
+const sum = myCalc(5,5, myRenderData)
+
+
+
+
+// Full Basic concept of call back example
+// let greeting = function(){
+//     document.querySelector('.void').innerHTML= name
+// }
+
+// let Person = function(first_callback){
+//     Myname = "Avesh Welcome"
+//     first_callback(name)
+// }
+// Person(greeting)
 
 
 
 
     //CallBack Function
     
-let myDisplay = function(display){
+// let myDisplay = function(display){
 
-document.querySelector('.display').innerHTML = display
+// document.querySelector('.display').innerHTML = display
     
-}
-let doSum= function(num1,num2,myAns){
-    let sum = num1 + num2;
-    myAns(sum)
-}
+// }
+// let doSum= function(num1,num2,myAns){
+//     let sum = num1 + num2;
+//     myAns(sum)
+// }
 
-doSum(5,5,myDisplay)
+// doSum(5,5,myDisplay)
 
 
 
 
 // Example 2
 
-let order = (call_production)=>{
+// let order = (call_production)=>{
 
-console.log('Please call the production for taking your order')
+// console.log('Please call the production for taking your order')
 
-call_production();
+// call_production();
 
-}
+// }
 
-let production = ()=>{
+// let production = ()=>{
 
-console.log('Your order is received Thank you..')
+// console.log('Your order is received Thank you..')
 
-}
+// }
 
-order(production)
+// order(production)
 
 
 
@@ -95,21 +117,21 @@ order(production)
 // Below example is shows that how callback execute code
 // if we if we put call back inside sequence timeout then first printng will print then second one print will be print
 
-let Squence = function(the_callback){
-    setTimeout(() => {
-        console.log('This is the first printing')
-    }, 3000);
-    the_callback()
-}
+// let Squence = function(the_callback){
+//     setTimeout(() => {
+//         console.log('This is the first printing')
+//     }, 3000);
+//     the_callback()
+// }
 
-let Added = function(){
-    setTimeout(function(){
-console.log('this is second printng')
-    },1000)
+// let Added = function(){
+//     setTimeout(function(){
+// console.log('this is second printng')
+//     },1000)
     
-}
+// }
 
-Squence(Added)
+// Squence(Added)
 // Added(Squence)
 
 
