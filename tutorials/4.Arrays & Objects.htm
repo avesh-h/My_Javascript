@@ -4,29 +4,177 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title> 
+</head>
 
-
+<body>
+HEllo work
 <script>
 
                           /*Object*/
 
-let avesh = {
+// let avesh = {
 
-    name: 'Avesh',
-    std: 'college',
-    salary: 10,
-    age: 23,
+//     name: 'Avesh',
+//     std: 'college',
+//     salary: 10,
+//     age: 23,
+// }
+
+//If add any proper ty in avesh object it will also add that property in this hasan object
+// let hasan = avesh
+
+
+//If we create object like this and using spread operator it will create anator copy of avesh object and if we make any change in avesh array it will not add in this array
+// let hasan2 = {
+//     ...avesh
+// }
+
+// console.log('hasan2', hasan2)
+// avesh.birthyear = 1998
+
+// avesh.arr = [1509,'2022']
+
+
+// console.log('hasan' , hasan)
+// console.log(avesh);
+
+// console.log(avesh.std);
+
+// console.log(avesh.salary);
+
+//               /*OR*/
+
+// console.log(avesh['name']);
+                           
+                               //More in Objects
+
+// const obj = {
+//     name: 'asjakf',
+//     surname: 'asfaf',
+//     age : 55,
+//     profile : 'akjfak'
+// }
+
+// for (const key in obj) {
+//     if (Object.hasOwnProperty.call(obj, key)) {
+//         const element = obj[key];
+//         console.log(element)
+//     }
+// }
+
+                        /*More in Arrays*/
+const array = [2,'hi' , 32 , 'ob' , 990]
+
+
+for (const element of array ) {
+    console.log(element)
 }
-console.log(avesh);
 
-console.log(avesh.std);
+ const newArr = [...array]
 
-console.log(avesh.salary);
+ //We can find single value from it
+ const changeArr = array.find((element)=>(element===32))
 
-              /*OR*/
+ console.log(changeArr)
 
-console.log(avesh['name']);
+
+ const empAge = [21,44,45,23,33,55]
+
+// const youngEmp = []
+ let Young = empAge.reduce((youngEmp,currAge)=>{
+    
+    if(currAge < 40){
+      youngEmp.push(currAge)
+    }
+    return youngEmp
+ },[])
+
+ console.log(Young)
+ 
+
+// Assignment 1
+
+// Tasks:
+// (1) Make array of number and filter that with nubers which greater than 5.
+// (2) map that filtered array into object with num property
+// (3) reduce that filtered number with with multiplication
+
+const myArr = [9,2,1,3,6,8]
+
+const filteredArr = myArr.filter((element)=>(element > 5))
+
+//Return object of each filterdArr number
+const filteredObj = filteredArr.map((element)=>({num : element }))
+
+console.log(filteredObj)
+
+const reducedArray = filteredObj.reduce((initialValue,element)=>{
+    return initialValue * element.num
+},1)
+
+console.log(reducedArray)
+
+//done
+
+
+//Task 2 : Create Function that can find maximum value from first Task
+
+const findMax = (arr) =>{
+ const Maximum = arr.reduce((maxValue,value)=>{
+        if(value > maxValue){
+            maxValue = value
+        }
+        return maxValue
+    },0)
+    return Maximum
+}
+
+const MaximumValue = findMax(filteredArr)
+
+console.log(MaximumValue)
+
+//Done
+
+//Task 3:
+
+const findMaxAndMin = (arr) =>{
+    // For Maximum
+    const Maximum = arr.reduce((maxValue,value)=>{
+        if(value > maxValue){
+            maxValue = value
+        }
+        return maxValue
+    },0)
+    //For Minimum
+    // const Minimum = arr.reduce((minValue,value)=>{
+    //     if(value > minValue){
+    //         value = minValue
+    //     }
+    //     return minValue
+    // },0)
+    // let minimum = (arr,min=arr[0])=>{
+
+    //     for(let i =0; i < arr.length ; i++){
+    //         if(min < arr[i]){
+    //             min = arr[i]
+    //         }
+    //     }
+    //     return min
+    // }
+   
+    const Minimum = Math.min(...arr)
+
+    return [Maximum , Minimum]
+    
+}
+ 
+
+const MinimumValue = findMaxAndMin(filteredArr)
+
+const [max , min] = MinimumValue
+
+console.log(max,min)
 
 
 
@@ -34,23 +182,23 @@ console.log(avesh['name']);
                              /*Array*/
 
 
-let a = ['samir',23,'raj',11]
+// let a = ['samir',23,'raj',11]
 
 
-console.log(a);
+// console.log(a);
 
 
-console.log(a[2]);
+// console.log(a[2]);
 
 
 
                              /*Array Sorting*/
            
-let band = [21,2,5,66,4]
+// let band = [21,2,5,66,4]
 
-band = band.sort();
+// band = band.sort();
 
-console.log(band);
+// console.log(band);
 
 
 
@@ -59,24 +207,23 @@ console.log(band);
 
 
 
-band.push('i am best');
+// band.push('i am best');
 
-console.log(band);
+// console.log(band);
+
+
+
+                                    //More on Objects
+let the_obj = {
+    name:'avesh',
+    age: 23,
+    position : 'developer',
+    hobbies : 'Soccer'
+}                                    
 
 
 
 </script>
-
-
-
-
-
-</head>
-<body>
-
-
-
-    HEllo work
     
 </body>
 </html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="display">
+
+    </div>
+
+
+
+    <script>
+
+//That's how Synchronous code works
+
+        // const greet =() =>{
+        //     console.log('hello')
+        // }
+
+        // const second = () =>{
+        //     alert('alert is second')
+        // }
+
+        // setTimeout(second ,2000 )
+
+        // greet();
+
+
+
+
+//Promises Basic Example
+
+    // const a = 10
+    // const b = 2
+            
+    // const myFunc=(res,rej)=>{
+    //     if(a + b == 11){
+    //       return  res('it is true')
+    //     }
+    //     else{
+    //         return rej( 'wrong')
+    //     }
+    // }
+
+    // const promise = new Promise(myFunc)
+
+    // promise.then((mes)=>{
+    //     console.log(mes)
+    // }).catch((err)=>{
+    //     console.log(err)
+    // })
+    
+
+// In Below Example with help of callback function first we add data and then print the updated data
+
+// const data = [
+// {
+//     name : 'jerry',
+//     language : 'python'
+// },
+// {
+//     name : 'milli',
+//     language : 'java'
+// }
+// ]
+
+const display = document.getElementById('display')
+
+// const getData = () =>{
+//     setTimeout(()=>{
+//         data.forEach((Singledata)=>{
+            
+//                display.innerHTML = display.innerHTML+ `
+//                                     <div>${Singledata.name}</div>
+//                                     <div>${Singledata.language}</div>
+
+//                                     `
+//             })
+//     },2000)
+    
+// }
+
+// const createData=(newData , callback)=>{
+//     setTimeout(()=>{
+//         data.push(newData)
+//         callback();
+//     },3000)
+    
+// }
+
+    
+
+// createData({name : 'manny', language : 'c#'},getData)
+
+
+// With Help of promise
+
+const data = [
+{
+    name : 'jerry',
+    language : 'python'
+},
+{
+    name : 'milli',
+    language : 'java'
+}
+]
+
+const getData =() =>{
+        setTimeout(()=>{
+                    data.forEach((Singledata)=>{
+                
+                   display.innerHTML = display.innerHTML+ `
+                                        <div>${Singledata.name}</div>
+                                        <div>${Singledata.language}</div><br />
+    
+                                        `
+                })
+        },1000)
+  
+}
+
+const createData = (newData) =>{
+    return new Promise((res,rej)=>{
+        let boolean = false
+        if(!boolean){
+            
+        setTimeout(()=>{
+            data.push(newData)
+            res('sucessfully added');
+        },2000)   
+        }
+        else{
+            rej('Rejected')
+        }
+        
+    })
+}
+
+
+createData({name:'ben', language : 'Go-Lang'}).then(getData).catch((error)=>{
+    console.log(error)
+})
+
+
+
+
+
+    </script>
+</body>
+</html>
