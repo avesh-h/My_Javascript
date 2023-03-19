@@ -1,98 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-  
-    
+  </head>
+  <body>
+    <script>
+      //Example of constructor inheritance
 
-<script>
-                                                  //Example of constructor inheritance
+      // function employee(Name, Experience, Id, Salary){
 
+      // this.name = Name;
+      // this.exp = Experience;
+      // this.id = Id;
+      // this.salary = Salary;
 
-// function employee(Name, Experience, Id, Salary){
+      // }
 
-// this.name = Name;
-// this.exp = Experience;
-// this.id = Id;
-// this.salary = Salary;
+      // var employee1 = new employee('Rohan',2,21,10000);
 
+      // function programmer(name,Experience,id,salary,lang){
 
-// }
+      //     employee.call(this,name,Experience,id,salary)                    //Inherite the Constructor
 
+      //          this.lang = lang
 
+      // }
 
-// var employee1 = new employee('Rohan',2,21,10000);
+      // var employee2 = new programmer('avesh',2,23,12000,'javascript')
 
+      //Example 2 of constructor inheritance with prototype inheritance
 
-// function programmer(name,Experience,id,salary,lang){
+      // const person = function(firstname,lastname,birthyear){
 
-//     employee.call(this,name,Experience,id,salary)                    //Inherite the Constructor
+      //     this.firstname = firstname;
+      //     this.lastname = lastname;
+      //     this.birthyear = birthyear;
 
-//          this.lang = lang
-    
+      // }
 
+      // const student = function(firstname,lastname,birthyear,course){
 
-// }
+      // person.call(this,firstname,lastname,birthyear)                                              //Constructor inheritance
 
+      // this.course = course
 
-// var employee2 = new programmer('avesh',2,23,12000,'javascript')
+      // }
 
+      // console.log(student)
 
+      // person.prototype.calcAge = function(){
 
+      // console.log(2022 - this.birthyear)
 
+      // }
 
+      // student.prototype = Object.create(person.prototype)                                     //prototype Inheritance
 
-                                                           //Example 2 of constructor inheritance with prototype inheritance
+      // student.prototype.intro = function(){
 
+      // console.log(`hello My Name is ${this.firstname} ${this.lastname} and  my course is ${this.course}.`)
 
+      // }
 
-const person = function(firstname,lastname,birthyear){
+      // const mike = new student('mike','harper',1998,'CS')
 
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.birthyear = birthyear; 
+      // //student.prototype.constructor = student
+      // console.log(student)
 
-}                              
+      // console.log(mike.calcAge())
 
-const student = function(firstname,lastname,birthyear,course){
+      // function Animal() { }
 
-person.call(this,firstname,lastname,birthyear)                                              //Constructor inheritance
+      // Animal.prototype = {
+      //     constructor: Animal,
+      //     eat: function() {
+      //         console.log("nom nom nom");
+      //     }
+      // };
 
-this.course = course
+      // let duck = Object.create(Animal.prototype)
+      // let beagle= Object.create(Animal.prototype)
 
-}
+      // console.log(duck.eat())
 
+      // In below example if we inherit Animal prototype to the Bird and Dog prototype then whenever we create the instance from the Dog and Bird there constructor going to show us Animal instead of Dog or Bird if we want to change that follow below example
 
-person.prototype.calcAge = function(){
+      // function Animal() { }
+      // function Bird() { }
+      // function Dog() { }
 
-console.log(2022 - this.birthyear)
+      // Bird.prototype = Object.create(Animal.prototype);
+      // Dog.prototype = Object.create(Animal.prototype);
 
-}
+      // // Only change code below this line
 
-student.prototype = Object.create(person.prototype)                                     //prototype Inheritance
+      // Bird.prototype.constructor = Bird
+      // Dog.prototype.constructor = Dog
 
-student.prototype.intro = function(){
+      // let duck = new Bird();
+      // let beagle = new Dog();
 
-console.log(`hello My Name is ${this.firstname} ${this.lastname} and  my course is ${this.course}.`)
+      // console.log(duck.constructor)
+      // console.log(beagle.constructor)
 
-}
+      //How to create Mixin in javasript
 
+      //Mixin is simply a function in which if you pass any object as argument inside of them then that function will add property inside the object whatever you written inside the function.
 
-const mike = new student('mike','harper',1998,'CS')
+      // As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solution. Inheritance does not work well for unrelated objects like Bird and Airplane. They can both fly, but a Bird is not a type of Airplane and vice versa.
 
-//student.prototype.constructor = student
-console.log(student)
+      // For unrelated objects, it's better to use mixins. A mixin allows other objects to use a collection of functions.
 
-console.log(mike.calcAge())
+      // let flyMixin = function(obj) {
+      //   obj.fly = function() {
+      //     console.log("Flying, wooosh!");
+      //   }
+      // };
+      // The flyMixin takes any object and gives it the fly method.
 
+      // let bird = {
+      //   name: "Donald",
+      //   numLegs: 2
+      // };
 
+      // let plane = {
+      //   model: "777",
+      //   numPassengers: 524
+      // };
 
+      // flyMixin(bird);
+      // flyMixin(plane);
+      // Here bird and plane are passed into flyMixin, which then assigns the fly function to each object. Now bird and plane can both fly:
 
-</script>    
-</body>
+      // bird.fly();
+      // plane.fly();
+      // The console would display the string Flying, wooosh! twice, once for each .fly() call.
+
+      // Note how the mixin allows for the same fly method to be reused by unrelated objects bird and plane.
+
+      //Example
+      // let bird = {
+      //   name: "Donald",
+      //   numLegs: 2
+      // };
+
+      // let boat = {
+      //   name: "Warrior",
+      //   type: "race-boat"
+      // };
+
+      // // Only change code below this line
+      // let glideMixin = function(obj){
+      //   obj.glide = function(){console.log("something")}
+      // }
+
+      // glideMixin(bird)
+      // glideMixin(boat)
+
+      // bird.glide()
+      // boat.glide()
+
+      // let funModule = (()=>{
+      //   return {
+      //     isCuteMixin : (obj)=>{
+      //       obj.isCute = ()=>true
+      //     },
+      //      singMixin : (obj)=>{
+      //       obj.sing = ()=>console.log("Singing to an awesome tune")
+      //     }
+      //   }
+      // })()
+
+      //Example of both method Mixin an IIFE together
+
+      // let Animal = ()=>{}
+
+      // let funModule = (()=>{
+      //   return {
+      //     isCuteMixin : (obj)=>{
+      //       obj.isCute = ()=>true
+      //     },
+      //      singMixin : (obj)=>{
+      //       obj.sing = ()=>console.log("Singing to an awesome tune")
+      //     }
+      //   }
+      // })()
+
+      // let dog = new Animal()
+
+      // funModule.singMixin(dog)
+
+      // console.log(dog.sing())
+    </script>
+  </body>
 </html>

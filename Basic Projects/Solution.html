@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <!-- First -->
+      <label>First Example:</label>
+      <input type="number" id="input-one" onchange="getInputOne()" />
+      <p id="solution-one"></p>
+      <!-- Second -->
+      <label>Second Example:</label>
+      <input type="number" id="input-second" onchange="getInputTwo()" />
+      <p id="solution-second"></p>
+      <!-- Third -->
+      <label>Third Example:</label>
+      <input type="number" id="input-third" onchange="getInputThird()" />
+      <p id="solution-third"></p>
+    </div>
+    <script>
+      const getInputOne = () => {
+        var resultOne = document.getElementById("solution-one");
+        var inputOne = document.getElementById("input-one").value;
+        if (inputOne < 0) {
+          resultOne.innerHTML = "enter a positive value";
+        } else {
+          return;
+        }
+      };
+
+      const getInputTwo = () => {
+        var resultTwo = document.getElementById("solution-second");
+        var inputTwo = document.getElementById("input-second").value;
+        var evenNumbers = [];
+        if (inputTwo % 2 === 0) {
+          for (let i = 2; i < 8; i++) {
+            if (i % 2 === 0) {
+              let j = 2;
+              inputTwo = Number(inputTwo) + j;
+              evenNumbers.push(inputTwo);
+              if (i === 8) {
+                break;
+              }
+            }
+          }
+          resultTwo.innerHTML = evenNumbers.map((number) => number);
+        } else {
+          return;
+        }
+      };
+
+      const getInputThird = () => {
+        var resultThird = document.getElementById("solution-third");
+        var inputThird = document.getElementById("input-third").value;
+        var oddNumbers = [];
+        if (!inputThird % 2 === 0) {
+          for (let i = 2; i < 8; i++) {
+            if (i % 2 === 0) {
+              let j = 2;
+              inputThird = Number(inputThird) + j;
+              oddNumbers.push(inputThird);
+              if (i === 8) {
+                break;
+              }
+            }
+          }
+          resultThird.innerHTML = oddNumbers.map((number) => number);
+        } else {
+          return;
+        }
+      };
+    </script>
+  </body>
+</html>

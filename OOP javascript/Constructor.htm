@@ -22,38 +22,59 @@
  <script>
                                            //OOP create constructor
                                     
-function employee(Name, Experience, Id, Salary){
+// function employee(Name, Experience, Id, Salary){
 
-    this.name = Name;
-    this.exp = Experience;
-    this.id = Id;
-    this.salary = Salary;
-
-
-}
+//     this.name = Name;
+//     this.exp = Experience;
+//     this.id = Id;
+//     this.salary = Salary;
 
 
+// }
+//Note: this key word in all object it will point to the main object like in this case it's "employee". so whenever we create new object based on constructor it will point to the new object name.
 
-                 //new keyword always create new object for the constructor
-                 
-var employee1 = new employee('Rohan',2,21,10000);
+//new keyword always create new object for the constructor
 
+//And from this we create different object with same blue print of the original creation of constructor function
 
- document.getElementById('demo').innerHTML = employee1.name + "," +"<br>"+ employee1.exp + "," +"<br>"+ employee1.id + "," +"<br>"+ employee1.salary
+// var employee1 = employee('Rohan',2,21,10000);
+// console.log("EMP 1",employee1)
 
-
-
-
-
+// var employee2 = new employee('ronak',3,11,12000)
+// console.log("EMP 2",employee2)
+//  document.getElementById('demo').innerHTML = employee1.name + "," +"<br>"+ employee1.exp + "," +"<br>"+ employee1.id + "," +"<br>"+ employee1.salary
 
 
 
+//Basic explanation of what is use of prototype in constructor
+
+// Since numLegs will probably have the same value for all instances of Bird, you essentially have a duplicated variable numLegs inside each Bird instance.
+
+// This may not be an issue when there are only two instances, but imagine if there are millions of instances. That would be a lot of duplicated variables.
+
+// A better way is to use the prototype of Bird. Properties in the prototype are shared among ALL instances of Bird. Here's how to add numLegs to the Bird prototype:
 
 
+// Ex.
+// Bird.prototype.numLegs = 2;
+
+// Now all instances of Bird have the numLegs property.
+
+// console.log(duck.numLegs);
+// console.log(canary.numLegs);
+
+// Since all instances automatically have the properties on the prototype, think of a prototype as a "recipe" for creating objects. Note that the prototype for duck and canary is part of the Bird constructor as Bird.prototype. Nearly every object in JavaScript has a prototype property which is part of the constructor function that created it.
 
 
+// function Dog(name) {
+//   this.name = name;
+// }
+// Dog.prototype.numLegs = 4
 
-var employee2 = new employee('ronak',3,11,12000)
+// // Only change code above this line
+// let beagle = new Dog("Snoopy");
+
+// console.log(beagle)
 
 
 
@@ -61,47 +82,101 @@ var employee2 = new employee('ronak',3,11,12000)
                                                    //Example with Prototype 
 
 
-const car = function(name,speed){
+// const car = function(name,speed){
 
-   this.name = name;
-   this.speed = speed; 
+//    this.name = name;
+//    this.speed = speed; 
 
-}
-
-car.prototype.acceleration = function(){ 
-    
-    this.speed += 10
-    console.log(this.speed+'Km/h')
-
-}
-
-car.prototype.brake = function(){
-
-    this.speed  -= 5
-
-    console.log(this.speed+'Km/h')
-}
-
-// car.hey = function(){
-//     console.log('hey cars')
 // }
-let bmw = new car('bmw',120)
 
-let mercedes = new car('mercedes',95)
+// car.prototype.acceleration = function(){ 
+    
+//     this.speed += 10
+//     console.log(this.speed+'Km/h')
 
-bmw.acceleration()
-bmw.acceleration()
-bmw.brake()
-bmw.acceleration()
-bmw.brake()
-bmw.acceleration()
+// }
+
+// car.prototype.brake = function(){
+
+//     this.speed  -= 5
+
+//     console.log(this.speed+'Km/h')
+// }
+
+// // car.hey = function(){
+// //     console.log('hey cars')
+// // }
+// let bmw = new car('bmw',120)
+
+// let mercedes = new car('mercedes',95)
+
+// bmw.acceleration()
+// bmw.acceleration()
+// bmw.brake()
+// bmw.acceleration()
+// bmw.brake()
+// bmw.acceleration()
 
 
-bmw.brake()
+// bmw.brake()
 
-// car.hey();
+// // car.hey();
 
-console.log(car)
+// console.log(car)
+
+
+
+//To check the property of instance of main object
+
+// function Bird(name) {
+//   this.name = name;
+//   this.numLegs = 2;
+// }
+
+// let canary = new Bird("Tweety");
+// let ownProps = [];
+// // Only change code below this line
+
+// for(let property in canary){
+//   if(canary.hasOwnProperty(property)){
+//     ownProps.push(property)
+//   }
+// }
+
+// console.log(ownProps)
+
+
+
+//how the hasOwnProperty is created thory
+
+// Because a prototype is an object, a prototype can have its own prototype! In this case, the prototype of Bird.prototype is Object.prototype:
+
+// Object.prototype.isPrototypeOf(Bird.prototype);
+// How is this useful? You may recall the hasOwnProperty method from a previous challenge:
+
+// let duck = new Bird("Donald");
+// duck.hasOwnProperty("name");
+// The hasOwnProperty method is defined in Object.prototype, which can be accessed by Bird.prototype, which can then be accessed by duck. This is an example of the prototype chain. In this prototype chain, Bird is the supertype for duck, while duck is the subtype. Object is a supertype for both Bird and duck. Object is a supertype for all objects in JavaScript. Therefore, any object can use the hasOwnProperty method.
+
+
+// Prototype Object chain for this example Object is main that is above the construtor created object
+// Object > Bird > duck
+
+
+//example
+// function Dog(name) {
+//   this.name = name;
+// }
+
+// let beagle = new Dog("Snoopy");
+
+// Dog.prototype.isPrototypeOf(beagle);  // yields true
+
+
+// Object.prototype.isPrototypeOf(Dog.prototype);
+// console.log(Object.prototype)
+
+// console.log(Dog.prototype.isPrototypeOf(beagle))
 
  </script>   
 </body>

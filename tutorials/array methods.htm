@@ -1,658 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <!-- <link rel="icon" href="web.png" > -->
+  </head>
+  <body>
+    <script>
+      //ARRAY METHODS
 
-</head>
-<body>
-  
-    
+      //If we want connect two array together
+      const myArr1 = [1, 2, 3];
+      const myArr2 = [4, 5, 6];
 
-<script>
-                                                                            //ARRAY METHODS 
+      console.log(myArr1.concat(myArr2));
 
-                  
-                     //For the delete last element of from array
+      //If we want to delete specific element from the array with the given index then use splice
 
-let arr = [0,1,2,3,4,5,6,7]
-let pop = arr.pop()
-console.log(arr)
+      const elemsArr = [3, 3, 53, 2, 34];
 
-//it will edit the current array
+      let delElemFromArr = (index) => elemsArr.splice(index, 1);
 
+      //For the delete last element of from array
 
-                       //for join the each element of array
+      let arr = [0, 1, 2, 3, 4, 5, 6, 7];
+      let pop = arr.pop();
+      console.log(arr);
 
-let arr2 = ['i','am','the','best']
+      //it will edit the current array
 
-let join = arr2.join(' ')
+      //for join the each element of array
 
-console.log(join)
+      let arr2 = ["i", "am", "the", "best"];
 
-//it will edit the current array and return as a string
+      let join = arr2.join(" ");
 
+      console.log(join);
 
-                              //For add elelment inside array in ending
+      //it will edit the current array and return as a string
 
-let push = arr.push('seven')
+      //For add elelment inside array in ending
 
-console.log(arr)
-//it will edit the current array
+      let push = arr.push("seven");
 
+      console.log(arr);
+      //it will edit the current array
 
+      let arr3 = ["programmer", "in", "the", "world"];
 
-let arr3 = ['programmer','in','the','world']
+      let concat = arr2.concat(arr3);
 
-let concat = arr2.concat(arr3)
+      console.log(concat); //This is array
 
-console.log(concat)                //This is array
+      console.log(concat.join(" ").toString()); //this is string of that array
 
-console.log(concat.join(' ').toString())  //this is string of that array
+      //in this method concat crete whole new array for output
 
-//in this method concat crete whole new array for output
+      //Slice Method
 
+      let slice = arr.slice(2);
 
+      console.log(slice);
 
-                                                //Slice Method
+      //It will create new array
 
-let slice = arr.slice(2)
+      //Splice  Method
 
-console.log(slice)
+      //Deleting Elements
 
-//It will create new array
+      console.log("this is normal array", arr);
 
+      let splice = arr.splice(5, 3);
 
+      console.log("after deleting", arr);
 
+      //Adding the Elements
 
-                                      //Splice  Method
+      let splice2 = arr.splice(5, 0, 5, 6, "seven");
 
-//Deleting Elements
+      console.log("after adding", arr);
 
-console.log('this is normal array',arr)
+      //Oerwriting the element
 
-let splice = arr.splice(5,3)
+      let splice3 = arr.splice(7, 1, 7);
 
+      console.log("after overwriting", arr);
 
-console.log('after deleting',arr)
+      //It will edit original(current) array
 
-//Adding the Elements
+      //Sort Method
 
-let splice2 = arr.splice(5,0,5,6,'seven')
+      let arr4 = [5, 66, 7, 2, 44, 67, 3, 1];
 
-console.log('after adding',arr)
+      //For Ascending order
+      function sortingA(a, b) {
+        return a - b;
+      }
 
-//Oerwriting the element
+      //For Descending order
+      function sortingD(a, b) {
+        return b - a;
+      }
 
-let splice3 = arr.splice(7,1,7)
+      arr4.sort(sortingD);
+      console.log(arr4);
 
-console.log('after overwriting',arr)
+      //Sort Method For string
 
+      let arr5 = ["avesh", "John", "bill", "carter", "Trent", "Zayn"];
 
-//It will edit original(current) array
+      function sortNames(a, b) {
+        let aLower = a.toLowerCase();
 
+        let bLower = b.toLowerCase();
 
-
-
-
-
-
-
-                                                 //Sort Method
-
-
-let arr4 = [5,66,7,2,44,67,3,1] 
-
-//For Ascending order
-function sortingA(a,b){
-return a-b;
-}
-
-//For Descending order
-function sortingD(a,b){
-return b-a;
-}
-
-
-
- arr4.sort(sortingD)
- console.log(arr4)
-
-
-
-                      //Sort Method For string
-
-let arr5 = ['avesh','John','bill','carter','Trent','Zayn']
-
-
-function sortNames(a,b){
-
-let aLower = a.toLowerCase()
-
-let bLower = b.toLowerCase()
-
-if(aLower < bLower){
-    return -1
-}
-if(bLower < aLower){
-    return 1
-}
-
-}
-
-arr5.sort(sortNames)
-
-console.log(arr5)
-
-                                  //Sorting of object
-
-
-let arr6 = [
-
-{
-    first : 'bill',
-    last : 'gates'
-
-},
-{
-    first : 'Karen',
-    last : 'marr'
-},
-{
-    first : 'Kevin',
-    last : 'gastelum'
-},
-{
-    first : 'Anna',
-    last : 'Adesanya'
-}
-
-]
-
-function sortobj(a,b){
-
-    let ALower = a.first.toLowerCase()
-
-    let BLower = b.first.toLowerCase()
-
-    let ALast = a.last.toLowerCase()
-
-   let BLast = b.last.toLowerCase()
-
-    if(ALower == BLower){
-        if(ALast < BLast){
-        return -1
-    }
-    if(BLast < ALast){
-        return 1
-    }
-
-
-    }
-    if(ALower < BLower){
-        return -1
-    }
-    if(BLower < ALower){
-        return 1
-    }
-
-}
-
- arr6.sort(sortobj)
-
- console.log(arr6)
-
-  
-
-                                                       //Filter Method
-
-let arr7 = [23,4,55,21,8,32,5]                                                       
-
-function isfilter(e){
-
-    return e < 11
-}
-
-let filter = arr7.filter(isfilter)
-console.log(filter)
-
-
-                                                      //Filter Method for Object
-
-let arr8 = [
-
-{
-    name : 'zack',
-    age : 22
-},
-{
-    name : 'bill',
-    age : 18
-},
-{
-    name : 'paras',
-    age : 32
-},
-{
-    name : 'trent',
-    age : 11
-}
-
-]
-
-function filterAge(element){
-
-return element.age > 20
-
-}
-
-let fil = arr8.filter(filterAge)
-
-console.log(fil)
-
-
-
-
-                                          //Every Method
-
-
-//Every method always Returns the Boolean(true/false) Value
-
-
-let arr9 = [2,44,3,54,32,23,12]
-
-function isEvery(element){
-
-return element > 1
-
-}
-
-let every  = arr9.every(isEvery)
-
-console.log(every)
-
-
-
-
-
-
-
-                                              //some Method
-
-//Some method always Returns the Boolean(true/false) Value
-
-let arr10 = [22,24,42,12,54,3]
-                                              
-function Someeven(element){
-
-return (element % 2 == 1)
-
-}
-
-let some = arr10.some(Someeven)
-
-console.log(some)
-
-
-
-                                                       //Map method
-
-function double(x){
-
-return x * 2
-
-}                                                       
-
-function triple(x){
-
-return x * 3
-
-}
-
-// function isOdd(x){          //Experiment
-
-// return x % 2 == 1
-
-// }         
-
-
-let arr11 = [3,4,10,21,55,33,8]
-
-let map = arr11.map(double)
-
-console.log(map)
-
-
-
-                                                          //Filter Method
-
-function isodd(element){
-
-return element % 2 == 0
-
-}                      
-
-let filter2 = arr11.filter(isodd)
-
-console.log(filter2)
-
-
-
-
-
-                                                            //Reduce Method
-
-//normal function
-
-let sum =0;
-function total(arr){
-
-for(let i=0;i < arr.length;i++){
-
-   sum+=arr[i] 
-}
-return console.log(sum)
-
-}
-
-total(arr11)
-
-
-//This Upper Example we can able to do with reduce function
-
-let reduce = arr.reduce(function(sum,element){
-
-
-sum +=element
-return sum
-
-},0)
-
-
-console.log(reduce)
-
-                                  //Find Maximum value using reduce
-
-let max = 0;
-function findMax(max,ele){
-
-if(ele > max){
-    max = ele
-}
-
-return max
-
-}
-
-  let out = arr11.reduce(findMax) 
-  console.log('this is ex 1 of reduce',out)   
-
-
-                                     //With Normal Example
-
-let Max = 0                         
-function forMax(arr){
-
-for(let i=0;i<arr.length;i++){
-
-if(arr[i] > Max){
-
-    Max = arr[i]
-}
-
-}
-
-return Max
-
-
-}         
-
-let outP = forMax(arr11)
-
-console.log('with Normal Function',outP)
-
-
-
-let arr12 = [
-{
-    firstname: 'Ramesh',
-    lastname: 'rana',
-    age: 24
-
-},
-{
-    firstname: 'elon',
-    lastname : 'musk',
-    age : 44
-
-},
-{
-    firstname:'tiger',
-    lastname:'woods',
-    age:39
-},
-{
-    firstname:'avesh',
-    lastname : 'hasanfatta',
-    age:24
-}
-
-]
-
-
-
-
-
-                           //filter method with chainning of map
-
-
-function allFilter(ele){
-
-return (ele.age < 25);
-}
-
-let objOutput = arr12.filter(allFilter).map(function(ele){                              //Chainning Method
-
-    return ele.firstname
-})
-
-console.log(objOutput)
-
-
-                                            //    map,filter logic in one reduce method
-
-
-
-
-let educe = arr12.reduce(function(acc,curr){
-
-    if (curr.age < 25) {
-
-   acc.push(curr.firstname);
-
-  }
-
-  return acc;
-},[]);
-
-
-console.log(educe)
-
-
-
-
-
-                                                             //Example 2
-
-let redd = arr11.reduce(function(acc,curr){
-
-
-    let newVal = curr + 1;                      //First addition
-
-  if(newVal > 10){                               //then Filter
-
-acc.push(newVal)
-
-  }  
-
-return acc
-},[])
-
-console.log(redd)
-
-
-
-
-let arr13 = [
-
-{
-    firstname: 'Ramesh',
-    lastname: 'rana',
-    age: 24,
-    salary: 12000
-
-},
-{
-    firstname: 'elon',
-    lastname : 'musk',
-    age : 44,
-    salary: 11000
-
-},
-{
-    firstname:'tiger',
-    lastname:'woods',
-    age:39,
-    salary: 43223
-},
-{
-    firstname:'avesh',
-    lastname : 'hasanfatta',
-    age:24,
-    salary: 20000
-},
-
-{
-
-    firstname:'hasan',
-    lastname : 'shekh',
-    age:28,
-    salary: 52550
-
-
-}
-
-]
-
-let fullname ;
-let AllReduce = arr13.reduce(function(acc,curr){
-
-
-if(curr.salary < 20000){
-
-acc.push(curr.firstname)
-
-}
-return acc
-},[])
-console.log(AllReduce)
-
-
-                                                    //Chaining MEthod
-
-
-var text = 'Hello I am Reversed Now'
-
-var text2 = '12345678'
-
- var text3 = Number(text2)
-
- var result = text.split('').reverse().join('').split()
-
- 
-
-document.write(result)
-
-
-                                              //Example 3
-
-
-let arr14 = [2,5,7,11,17,9,7,6]
-
-function ForMapping(ele){
-
-return ele * ele
-
-}
-
-
-function ForFilter(ele){
-
-return ele % 2 == 0
-
-}
-
-let TheMapping = arr14.map(ForMapping)
-
-let Final = arr14.map(ForMapping).filter(ForFilter)                        //chaining Method
-
-console.log(TheMapping)
-console.log(Final)
-
-
-
-
-                                                        //Same thing on Reduce
-
-let sqrt;
-let OnReduce = arr14.reduce(function(acc,curr){
-
-sqrt = curr * curr
-
-// console.log(sqrt)
-
-if(sqrt % 2 == 0){
- 
-    acc.push(sqrt)
-}
-return acc
-},[])                                                        
-
-
-
-console.log(OnReduce)
-
-
-
-// let my_arr = [...numbs]
-
-let initialVal = 0;
-const my_func = (...my_arr) =>{
-
-   let the_new = my_arr.forEach((item)=>{
-        if(item > initialVal)
-        {
-            initialVal = item
+        if (aLower < bLower) {
+          return -1;
         }
-       
-    })
-    return initialVal
+        if (bLower < aLower) {
+          return 1;
+        }
+      }
 
-}
+      arr5.sort(sortNames);
 
-let new_func = my_func(1,2,22,43,12)
+      console.log(arr5);
 
-console.log(new_func)
+      //Sorting of object
 
+      let arr6 = [
+        {
+          first: "bill",
+          last: "gates",
+        },
+        {
+          first: "Karen",
+          last: "marr",
+        },
+        {
+          first: "Kevin",
+          last: "gastelum",
+        },
+        {
+          first: "Anna",
+          last: "Adesanya",
+        },
+      ];
 
+      function sortobj(a, b) {
+        let ALower = a.first.toLowerCase();
 
+        let BLower = b.first.toLowerCase();
 
+        let ALast = a.last.toLowerCase();
 
+        let BLast = b.last.toLowerCase();
 
-</script>
-</body>
+        if (ALower == BLower) {
+          if (ALast < BLast) {
+            return -1;
+          }
+          if (BLast < ALast) {
+            return 1;
+          }
+        }
+        if (ALower < BLower) {
+          return -1;
+        }
+        if (BLower < ALower) {
+          return 1;
+        }
+      }
+
+      arr6.sort(sortobj);
+
+      console.log(arr6);
+
+      //Filter Method
+
+      let arr7 = [23, 4, 55, 21, 8, 32, 5];
+
+      function isfilter(e) {
+        return e < 11;
+      }
+
+      let filter = arr7.filter(isfilter);
+      console.log(filter);
+
+      //Filter Method for Object
+
+      let arr8 = [
+        {
+          name: "zack",
+          age: 22,
+        },
+        {
+          name: "bill",
+          age: 18,
+        },
+        {
+          name: "paras",
+          age: 32,
+        },
+        {
+          name: "trent",
+          age: 11,
+        },
+      ];
+
+      function filterAge(element) {
+        return element.age > 20;
+      }
+
+      let fil = arr8.filter(filterAge);
+
+      console.log(fil);
+
+      //Every Method
+
+      //Every method always Returns the Boolean(true/false) Value
+
+      let arr9 = [2, 44, 3, 54, 32, 23, 12];
+
+      function isEvery(element) {
+        return element > 1;
+      }
+
+      let every = arr9.every(isEvery);
+
+      console.log(every);
+
+      //some Method
+
+      //Some method always Returns the Boolean(true/false) Value
+
+      let arr10 = [22, 24, 42, 12, 54, 3];
+
+      function Someeven(element) {
+        return element % 2 == 1;
+      }
+
+      let some = arr10.some(Someeven);
+
+      console.log(some);
+
+      //Map method
+
+      function double(x) {
+        return x * 2;
+      }
+
+      function triple(x) {
+        return x * 3;
+      }
+
+      // function isOdd(x){          //Experiment
+
+      // return x % 2 == 1
+
+      // }
+
+      let arr11 = [3, 4, 10, 21, 55, 33, 8];
+
+      let map = arr11.map(double);
+
+      console.log(map);
+
+      //Filter Method
+
+      function isodd(element) {
+        return element % 2 == 0;
+      }
+
+      let filter2 = arr11.filter(isodd);
+
+      console.log(filter2);
+
+      //Reduce Method
+
+      //normal function
+
+      let sum = 0;
+      function total(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return console.log(sum);
+      }
+
+      total(arr11);
+
+      //This Upper Example we can able to do with reduce function
+
+      let reduce = arr.reduce(function (sum, element) {
+        sum += element;
+        return sum;
+      }, 0);
+
+      console.log(reduce);
+
+      //Find Maximum value using reduce
+
+      let max = 0;
+      function findMax(max, ele) {
+        if (ele > max) {
+          max = ele;
+        }
+
+        return max;
+      }
+
+      let out = arr11.reduce(findMax);
+      console.log("this is ex 1 of reduce", out);
+
+      //With Normal Example
+
+      let Max = 0;
+      function forMax(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > Max) {
+            Max = arr[i];
+          }
+        }
+
+        return Max;
+      }
+
+      let outP = forMax(arr11);
+
+      console.log("with Normal Function", outP);
+
+      let arr12 = [
+        {
+          firstname: "Ramesh",
+          lastname: "rana",
+          age: 24,
+        },
+        {
+          firstname: "elon",
+          lastname: "musk",
+          age: 44,
+        },
+        {
+          firstname: "tiger",
+          lastname: "woods",
+          age: 39,
+        },
+        {
+          firstname: "avesh",
+          lastname: "hasanfatta",
+          age: 24,
+        },
+      ];
+
+      //filter method with chainning of map
+
+      function allFilter(ele) {
+        return ele.age < 25;
+      }
+
+      let objOutput = arr12.filter(allFilter).map(function (ele) {
+        //Chainning Method
+
+        return ele.firstname;
+      });
+
+      console.log(objOutput);
+
+      //    map,filter logic in one reduce method
+
+      let educe = arr12.reduce(function (acc, curr) {
+        if (curr.age < 25) {
+          acc.push(curr.firstname);
+        }
+
+        return acc;
+      }, []);
+
+      console.log(educe);
+
+      //Example 2
+
+      let redd = arr11.reduce(function (acc, curr) {
+        let newVal = curr + 1; //First addition
+
+        if (newVal > 10) {
+          //then Filter
+
+          acc.push(newVal);
+        }
+
+        return acc;
+      }, []);
+
+      console.log(redd);
+
+      let arr13 = [
+        {
+          firstname: "Ramesh",
+          lastname: "rana",
+          age: 24,
+          salary: 12000,
+        },
+        {
+          firstname: "elon",
+          lastname: "musk",
+          age: 44,
+          salary: 11000,
+        },
+        {
+          firstname: "tiger",
+          lastname: "woods",
+          age: 39,
+          salary: 43223,
+        },
+        {
+          firstname: "avesh",
+          lastname: "hasanfatta",
+          age: 24,
+          salary: 20000,
+        },
+
+        {
+          firstname: "hasan",
+          lastname: "shekh",
+          age: 28,
+          salary: 52550,
+        },
+      ];
+
+      let fullname;
+      let AllReduce = arr13.reduce(function (acc, curr) {
+        if (curr.salary < 20000) {
+          acc.push(curr.firstname);
+        }
+        return acc;
+      }, []);
+      console.log(AllReduce);
+
+      //Chaining MEthod
+
+      var text = "Hello I am Reversed Now";
+
+      var text2 = "12345678";
+
+      var text3 = Number(text2);
+
+      var result = text.split("").reverse().join("").split();
+
+      document.write(result);
+
+      //Example 3
+
+      let arr14 = [2, 5, 7, 11, 17, 9, 7, 6];
+
+      function ForMapping(ele) {
+        return ele * ele;
+      }
+
+      function ForFilter(ele) {
+        return ele % 2 == 0;
+      }
+
+      let TheMapping = arr14.map(ForMapping);
+
+      let Final = arr14.map(ForMapping).filter(ForFilter); //chaining Method
+
+      console.log(TheMapping);
+      console.log(Final);
+
+      //Same thing on Reduce
+
+      let sqrt;
+      let OnReduce = arr14.reduce(function (acc, curr) {
+        sqrt = curr * curr;
+
+        // console.log(sqrt)
+
+        if (sqrt % 2 == 0) {
+          acc.push(sqrt);
+        }
+        return acc;
+      }, []);
+
+      console.log(OnReduce);
+
+      // let my_arr = [...numbs]
+
+      let initialVal = 0;
+      const my_func = (...my_arr) => {
+        let the_new = my_arr.forEach((item) => {
+          if (item > initialVal) {
+            initialVal = item;
+          }
+        });
+        return initialVal;
+      };
+
+      let new_func = my_func(1, 2, 22, 43, 12);
+
+      console.log(new_func);
+
+      //Set constructor method
+      //It always store unique value it will avoid duplication
+
+      let mySet = new Set(["s", true, 44, "vas", 99]);
+
+      //if i want to add same property again then i will be not able to add that
+      mySet.add(44);
+      // console.log(mySet);
+
+      //If i want to check the element is exist or not it will return true or false
+      mySet.has("s");
+      // console.log(mySet.has("s"))
+
+      //If i want to delete element from the set it will apply onto the existing set it will not give whole new set like map or filter
+      mySet.delete(99);
+      // console.log(mySet);
+
+      //Then we can finally convert our whole set into array and we can use
+      console.log("arr to set", Array.from(mySet));
+
+      //Rivision properties
+
+      //flat()
+      //match()
+      //indexOf()
+      //contains()
+      //includes()
+      //substring()
+      //charAt()
+      //hasOwnProperty()
+      //concat()
+      //new Set() // Very powerful method need to study into deep for make work more easier
+
+      // let text = "The rain in SPAIN stays mainly in the plain";
+      // let result = text.match("ain");
+      // console.log(result.index);
+      // // console.log(text.substring(0, result));
+    </script>
+  </body>
 </html>
