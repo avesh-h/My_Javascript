@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="number" id="input" />
+    <p id="output"></p>
     <script>
 
 // function multiply(arr, n) {
@@ -102,25 +104,25 @@
 
 
 //Table  it will returns the array full of results
-function table(num,t){
-    if(t === 0){
-        return [];
-    }
-     let myVals = table(num,t-1)
-     myVals.push(num*t) 
-     return myVals
-}
+// function table(num,t){
+//     if(t === 0){
+//         return [];
+//     }
+//      let myVals = table(num,t-1)
+//      myVals.push(num*t) 
+//      return myVals
+// }
 
-console.log(table(2,10))
+// console.log(table(2,10))
 
 
-let arr = [10, 20, 30, 40, 50];
+// let arr = [10, 20, 30, 40, 50];
 
-for (let i = 1; i < arr.length; i++) {
-  let currentValue = arr[i];
-  let previousValue = arr[i - 1];
-  console.log(`The current value is ${currentValue} and the previous value is ${previousValue}`);
-}
+// for (let i = 1; i < arr.length; i++) {
+//   let currentValue = arr[i];
+//   let previousValue = arr[i - 1];
+//   console.log(`The current value is ${currentValue} and the previous value is ${previousValue}`);
+// }
 
 
 
@@ -145,6 +147,50 @@ for (let i = 1; i < arr.length; i++) {
 //     console.log(i)
 // })();
 
+
+// const factFunc= (num)=>{
+//     if(num < 1){
+//         debugger
+//         console.log("1st if")
+//         return 1
+//     }
+//     debugger
+//     console.log("else")
+//     return num * factFunc(num -1)
+// }
+
+// result = factFunc(5)
+// console.log(result)
+
+// let my_pbj = {
+//     name:"avesh",
+//     age:22,
+//     job:"Programmer"
+// }
+
+// console.log(Object.entries(my_pbj))
+
+    let getInput = document.getElementById('input')
+    let showValue = document.getElementById('output')
+
+    getInput.addEventListener('input',(e)=>{
+        let target = 3
+        let nextValueArr = []
+        let getValue = Number(e.target.value)
+        if(getValue < 0){
+            showValue.textContent = "enter a positive value"
+        }
+        else if(getValue){
+            for (let i=1;i<=target;i++){
+                getValue+=2
+                nextValueArr.push(getValue)
+            }
+            showValue.textContent = nextValueArr.join(",")
+        }
+        else{
+            showValue.textContent = " " 
+        }
+    })
 
     </script>
 </body>

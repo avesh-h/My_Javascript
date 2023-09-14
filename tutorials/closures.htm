@@ -1,64 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
     <script>
-        
       ///With help of closure function you can access local variable of function outside the function
-      
-    //   Basic Example of
 
-//     let MyFunc = (message)=>{
+      // -------------------------------------------------------Theory-----------------------------------------
 
-//         let message = 'i am printing the message'
+      //SO the main concept of the closure is that there is parent function MyFunc in below code and there is variable declare in the lexical environmen of that function and it also have another function and return the refrence of the child function which so if you calling it later after 5 years or whenver you want it will still remember the refrence of the message variable which is in the parent function.
 
-//         let getting = ()=>{
+      // so basically mean is that first it will invoke the MyFunc funtion which return the child function refrence and it uses the parent function
+      // s variable , In javascript after the MyFunc invoke then javascript automatically removes the function and variable related to MyFunc so how it will still remember the refrence of the variable so answer is the closure , In closure javascript is actually store in clousre box in memory heap so that's how you can get the refrence of that MyFunc variables even after deleted from memory heap by javascript.
 
-//             console.log(message)
+      //   Basic Example of
 
-//         }
-//         return getting;
-//     }
+      //     let MyFunc = (message)=>{
 
-// let the_new_func = MyFunc();
+      //         let message = 'i am printing the message'
 
-// the_new_func();
+      //         let getting = ()=>{
 
+      //             console.log(message)
 
+      //         }
+      //         return getting;
+      //     }
 
-// Example 2
+      // let the_new_func = MyFunc();
 
-// message variable is now accesissble in outside the mainFunction in newFunction with help of closure
+      // the_new_func();
 
-// const mainFunction = ()=>{
-//   let message = 'Function variable message'
-  
-//   const accessVariable = ()=>{
-//     console.log(message)
-//   }
-//   return accessVariable;
-// }
+      // Example 2
 
-// let newFuction = mainFunction();
+      // message variable is now accesissble in outside the mainFunction in newFunction with help of closure
 
-// newFuction();
+      // const mainFunction = ()=>{
+      //   let message = 'Function variable message'
 
+      //   const accessVariable = ()=>{
+      //     console.log(message)
+      //   }
+      //   return accessVariable;
+      // }
 
+      // let newFuction = mainFunction();
 
+      // newFuction();
 
-// console.log(message)
-
-
-
-</script>  
-        
-        
-</body>
+      // console.log(message)
+    </script>
+  </body>
 </html>

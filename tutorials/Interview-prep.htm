@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="products">
+      <li id="shoes">shoes</li>
+      <li id="watch">watch</li>
+      <li id="suits">suits</li>
+    </div>
+    <script>
+      //Event Delegation is that we can access childelement for the event by the parent element without giving individual event to the each child element
+
+      let parentProduct = document
+        .getElementById("products")
+        .addEventListener("click", (e) => {
+          if ((e.target.tagName = "LI")) {
+            window.location.href += "#" + e.target.id;
+          }
+        });
+      // ------------------Javascript Object Interview questions -----------------------------
+
+      // -------------------------------OBJECTS---------------------------------------------
+
+      const mySelf = new Object();
+
+      mySelf.name = "avesh";
+      mySelf.age = 23;
+
+      //Delete keyword is actually used in if we want to delete the property of the object
+
+      //   delete mySelf.age;
+
+      //   mySelf["name"] = "tiger";
+
+      //   const newSelf = {
+      //     name: "sfs",
+      //     prop: 12,
+      //   };
+
+      //   for (let i in mySelf) {
+      //     console.log(i);
+      //   }
+
+      //   const vals = Object.values(mySelf);
+
+      //   for (let j of vals) {
+      //     console.log(j);
+      //   }
+
+      //See the below example the delete key word is only work when we want to delete any property of the object
+
+      //   const myFunc = ((a) => {
+      //     delete a;
+      //     return a;
+      //   })(5);
+
+      //   console.log(myFunc);
+
+      //   if we want to add propery name with spaces then we can do like this
+
+      // const user = {
+      //     'full Name':'unknow'
+      // }
+      // console.log(user['full Name'])
+
+      //How to add dynamic property inside the object
+
+      //   const property = "firstName";
+      //   const value = "user";
+
+      //   const infoUser = {
+      //     [property]: value,
+      //   };
+      //second way
+      //   infoUser[property] = value;
+      //   console.log(infoUser);
+
+      //what will be output of this
+      //which we declare the second prop of the obj it will replace the first a of the obj
+
+      //   const obj = {
+      //     a: "one",
+      //     b: "two",
+      //     a: "three",
+      //   };
+
+      //   console.log(obj);
+
+      //SO create function that multiply the all numeric value of the object property multiply by two
+
+      //   let nums = {
+      //     a: 100,
+      //     b: 200,
+      //     title: "i am title",
+      //   };
+
+      //   const mulitplyByTwo = (obj) => {
+      //     for (let i in obj) {
+      //       if (typeof obj[i] === "number") {
+      //         obj[i] = obj[i] * 2;
+      //       }
+      //     }
+      //     console.log(obj);
+      //   };
+
+      //   mulitplyByTwo(nums);
+
+      //what will be output of this
+
+      //   const a = {};
+      //   const b = { key: "b" };
+      //   const c = { name: "prop" };
+
+      //   a[b] = 123;
+      //   a[c] = 456;
+
+      // console.log(a)
+      //after console.log(a) we notice it is we are trying to set object as a property name , so javascript see it is object so it will trying to convert into the string which is "[object Object]" this and this will do for both b and c and it notice there will become the same name of the property so it will get the latest value of the c so it becomes like this {'[object Object]' = 456} so it will show us the 456 as an output
+
+      //   it will set property of object like this
+      //   a["[object Object]"] = 123;
+      //   a["[object Object]"] = 456;
+
+      //   console.log(a[b]);
+
+      // What is the use of the JSON.stringify and JSON.parse
+
+      // if we want to convert the whole object or array into the string then we use JSON.stringify for that
+
+      //WHat will be output of this
+      //   console.log([..."string"]);
+      //   ['s','t','r','i','n','g']
+
+      // what will be the output of this
+
+      // const theObj = {
+      //   user: "piyush",
+      //   age: 23,
+      //   health: 22,
+      // };
+
+      //   It will only convert stringify object of the "user" property of theObj
+      // console.log(JSON.stringify(theObj, ["user"]));
+
+      // const shape = {
+      //   radius: 10,
+      //   diameter: () => {
+      //     return this.radius * 2;
+      //   },
+      //   // diameter() {
+      //   //   return this.radius * 2;
+      //   // },
+      //   perimeter: () => {
+      //     return 2 * Math.PI * this.radius;
+      //   },
+      // };
+
+      // console.log(shape.diameter()); //20
+      // console.log(shape.perimeter); // NaN
+
+      //WHat is meaning of the destructuring in object
+      //   const user = {
+      //     name: "asvsd",
+      //     age: 22,
+      //     year: 1223,
+      //   };
+
+      //   const { year: bornYear } = user;
+      //   console.log(bornYear);
+
+      //   nested destructuring
+
+      //   const user = {
+      //     name: "sfsfs",
+      //     fullName: {
+      //       firstName: "avesh",
+      //       lastName: "hasanfatta",
+      //     },
+      //   };
+
+      //   const {
+      //     fullName: { lastName },
+      //   } = user;
+
+      //   console.log(lastName);
+
+      //WHat is deep clone why it is use?
+
+      //   const fullObj = {
+      //     a: 12,
+      //     b: {
+      //       c: 33,
+      //       d: ["hello", "world"],
+      //       e: {
+      //         f: {
+      //           g: "true",
+      //           h: {
+      //             i: false,
+      //           },
+      //         },
+      //       },
+      //     },
+      //   };
+
+      //   clone till first level
+      //   const copiedObj = Object.assign({}, fullObj);
+
+      //deep clone
+      //   const copiedObj = JSON.parse(JSON.stringify(fullObj));
+
+      //   copiedObj.b.e.f.g = "not true";
+
+      //   console.log(fullObj);
+
+      //   Rest parameter
+
+      //Rest parameter will be always at the end of the parameter of the function
+
+      //   const getFruits = (fruits, ...args) => {
+      //     return [...fruits, ...args];
+      //   };
+      //   console.log(getFruits(["peach", "apple", "banana"], "orange", "mango"));
+
+      //Pass by value
+      //   let a = 22;
+      //   let b;
+
+      //   b = a;
+      //   a = 24;
+      //   console.log(b);
+
+      //pass by reference
+
+      //   if we make any change into the c it will actually affect the d also because we are not copying the all values of the c but we are actually passing the refernce of the c, so if we make any changes into the c it will change to d also
+      //   let c = { name: "sfsf", age: 22 };
+
+      //   let d = c;
+
+      //   c.age = 33;
+
+      //   console.log(d.age);
+
+      //Object referncing
+      //what will be the output of this
+
+      //the answer of the below code will be the false for both of them because both represent the different memory space in the memory so it doesn't metter if we are comparing both
+
+      //   it doesn't matter if you are comparing strictly or not strictly they both point at the different memory space
+
+      //   console.log({ a: 1 } == { a: 1 }); //false
+      //   console.log({ a: 1 } === { a: 1 }); //false
+
+      //   let person = {
+      //     name: "ssfsf",
+      //   };
+      //   const members = [person];
+      //   person = null;
+
+      //   console.log(members);
+
+      //What will be the output
+
+      //   const value = { number: 10 };
+
+      //SO in the below function we are telling is that there will be some parameter we will passing if there is no parameter is passed then it will take the default value of object which is this {...value} as you can see below
+
+      //   const myFunction = (x = { ...value }) => {
+      //     console.log((x.number *= 2));
+      //   };
+
+      // in below it will take clone object of the value
+      //   myFunction(); //20
+      //   myFunction(); //20
+
+      //here it will take the direct object of the value
+      //   myFunction(value); //20
+      //   myFunction(value); //40
+
+      //   ----------------------var,let,const------------------------------
+
+      // illegal shadowing
+
+      // if there is let variable outside and we are trying to change inside the block with var variable then it will called the illegal shadowing
+
+      // function test() {
+      //   var a = "hello";
+      //   let b = "good night";
+
+      //   if (true) {
+      //     let a = "hi";
+      //     // var b = "goodmorning"; //illegal shadowing
+      //   }
+
+      //   console.log(a);
+      // }
+
+      // test();
+
+      // the main difference betweeen let and const is we cannot only declare the const variable we have to initalize the value together with const
+
+      // let a;
+      // a = 'sdsd'
+
+      //IN below code show us the error because you have to declare the initialize value to const variable when you declare it
+      // const a;
+      // a = 33
+
+      //the ability of the function that can access the variable or function outside the its lexical scope that type of function is known as closure
+
+      //   function parent() {
+      //     let a = 22;
+      //     function children() {
+      //       console.log(a);
+      //     }
+      //     return children();
+      //   }
+
+      //   parent();
+
+      //It will show us the undefined because the function will first prefer the local variable x which is just initialize in the memory as undefinde so it will show undifinded
+
+      //   var x = 2;
+
+      //   function change() {
+      //     console.log(x);
+      //     var x = 4;
+      //   }
+
+      //   change();
+
+      //   function add(num) {
+      //     // what we recives in function are calls as Parameters
+      //     return num;
+      //   }
+
+      //   add(4); //so what we are passing in function that calls as a Argument
+
+      //   what is callback function
+
+      // call back function are the function that passes into anathor function as agument and it will invoked inside of the outer function
+
+      // ex:
+
+      // function greeting(name){
+      //     alert('hello ' + name)
+      // }
+
+      // function adding(callback){
+      //      let name = prompt('enter your name')
+      //      callback(name)
+      // }
+
+      // adding(greeting)
+
+      // there are lot methods that have callback function like map , filter , reduce , find etc.
+
+      //   differnce between arrow function and the normal function
+
+      //   const obj = {
+      //     name: "sgadgs",
+      //     username: "avesh",
+      //     func() {
+      //       console.log(this.username);
+      //     },
+      //     fn: () => {
+      //       console.log(this.username);
+      //     },
+      //   };
+
+      //   obj.func();
+      //   obj.fn();
+
+      //arguments keyword is not accssible in arrow function
+
+      //   const myFunc = () => {
+      //     console.log(arguments);
+      //   };
+
+      //   function myFunc() {
+      //     console.log(arguments);
+      //   }
+
+      //   myFunc(2, 3, 4);
+
+      // ----------------------bind , call ,apply----------------------------------
+
+      //   const person = {
+      //     name: "avesh",
+      //     age: 22,
+      //   };
+
+      //   function func(profession, year) {
+      //     console.log(`${this.name} and age is ${this.age} born at ${year}`);
+      //   }
+
+      // func.call(person);
+
+      //if we want to pass some parameters to it then
+
+      //for the call
+      //   func.call(person, "business", 1999);
+
+      //for the apply
+      //   func.apply(person, ["business", 1999]);
+
+      //   console.log("start");
+
+      //   function myFunc(cb) {
+      //     setTimeout(() => {
+      //       cb(`async`)
+      //     }, 1000);
+      //   }
+
+      //   const message = myFunc((message)=>{
+      //     console.log(message)
+      //   });
+
+      //   console.log("end");
+
+      // let myArr = [2, 3, 5, 4, 3];
+
+      // console.log(myArr.splice(1, myArr.length));
+
+      // console.log(myArr.splice(1, 1, 1));
+      // console.log(myArr);
+      // for (var i = 0; i < 3; i++) {
+      //   setTimeout(function () {
+      //     alert(i);
+      //   }, 1000 + i);
+      // }
+
+      // (function () {
+      //   var a = (b = 5);
+      // })();
+
+      // console.log(b);
+
+      // let arr = [
+      //   [12, 3],
+      //   [3, 6],
+      //   [5, 4, [4, 6, 3], [4, [6, 5, 4]]],
+      // ];
+
+      // console.log(arr.flat(2));
+      //custom flat arr
+
+      // const customFlat = (arr, level = 1) => {
+      //   let mainArr = [];
+
+      //   arr.forEach((element) => {
+      //     if (Array.isArray(element) && level) {
+      //       mainArr.push(...customFlat(element, level - 1));
+      //     } else {
+      //       mainArr.push(element);
+      //     }
+      //   });
+      //   return mainArr;
+      // };
+
+      // console.log(customFlat(arr, 3));
+
+      //Call , Apply , Bind is used to manipulate the functions context the example is below
+
+      // let person = {
+      //   name: "Google",
+
+      //   hello: function (thing, arg = "") {
+      //     console.log(this.name + " is the best company" + thing + arg);
+      //   },
+      // };
+
+      //this is normal invocation
+      // person.hello(" in the world");
+
+      //Call Method
+      //lets manipulate the hello function context to change the refernce of the object
+      // let alternative = {
+      //   name: "Microsoft",
+      // };
+
+      //you can see we change the refernce that he point in this keyword
+      // person.hello.call(alternative, " in the world");
+
+      //Apply method
+      //we can do same thing with apply method the slight change is that apply take the array for arguments
+      // let alternativeTwo = {
+      //   name: "apple",
+      // };
+      // person.hello.apply(alternativeTwo, [" in the world"]);
+
+      //Bind Method
+      //We can do same thing with Bind as well but it retuns the new function which we can call the function
+
+      // let alternativeThree = {
+      //   name: "Meta",
+      // };
+
+      // person.hello.bind(alternativeThree, " in the World")();
+
+      // let newFunc = person.hello.bind(alternativeThree, " in the World");
+      // newFunc();
+
+      // const data = new Promise((res, rej) => {
+      //   res("Hello");
+      // });
+
+      // const promise2 = new Promise((res, rej) => {
+      //   setTimeout(res("Success!"), 2000);
+      // });
+
+      // const promise3 = new Promise((res, rej) => {
+      //   rej("error");
+      // });
+
+      // const allData = Promise.all([data, promise2]);
+
+      // allData.then((res) => console.log(res));
+    </script>
+  </body>
+</html>
