@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1)Find the longest word in the string
+
+      //     function findLongestWordLength(str) {
+      //     console.log(Math.max(...str.split(" ").map((c)=>c.length)))
+      //     return Math.max(...str.split(" ").map((c)=>c.length))
+      // }
+
+      // findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+      //2)Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+      // function largestOfFour(arr) {
+      //   let newArr = []
+      //   for(let i =0;i < arr.length;i++){
+      //     newArr.push( Math.max(...arr[i]))
+      //   }
+
+      //   return newArr;
+      // }
+
+      //OR
+
+      // function largestOfFour(arr) {
+      //   const myArr = arr.map((curr,ind)=>{
+      //       let bigNum;
+      //      curr.forEach((c,i)=>{
+      //       if(i===0){
+      //         bigNum = c
+      //       }
+      //       else{
+      //         if(c > bigNum){
+      //           bigNum = c
+      //         }
+      //       }
+      //     })
+      //     return bigNum
+      //   })
+      //     console.log(myArr)
+
+      //   return myArr;
+      // }
+
+      // largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+      //OR
+
+      // function largestOfFour(arr) {
+      //   return arr.map((curr)=>{
+      //     return curr.reduce((prev,curr)=>{
+      //       return curr > prev ? curr : prev
+      //     })
+      //   })
+      // }
+
+      //lesson
+      //We can also get previous value of array with reduce function if we did not mention any initial value
+      // const newThing=[1,2,3,4].reduce((prev,curr)=>{
+      //     console.log(prev)
+      //     return prev+curr
+      // })
+      // console.log(newThing)
+
+      //3)Check if a string (first argument, str) ends with the given target string (second argument, target).
+
+      // This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+
+      //1
+
+      // function confirmEnding(str, target) {
+      //   const myStr = str.split("").reverse().join("")
+      //   console.log(myStr)
+      //   console.log(myStr.substring(0,target.length))
+      //   if(myStr.substring(0,target.length)=== target.split("").reverse().join("")){
+      //     return true
+      //   }
+      //   else{
+      //     return false
+      //   }
+      // }
+
+      //or
+
+      // function confirmEnding(str, target) {
+      // if(str.substring((str.length-target.length))===target){
+      //     return true
+      //   }
+      //   else{
+      //     return false
+      //   }
+      // }
+
+      //or
+
+      // function confirmEnding(str, target) {
+      //   return str.substring(str.length-target.length)===target
+      // }
+
+      // confirmEnding("He has to give me a new name", "name")
+
+      //4)Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method.
+
+      // function repeatStringNumTimes(str, num) {
+      //   let myStr= str
+      //   if(num >0){
+      //     for(let i=1;i<num;i++){
+      //       myStr+=str
+      //   }
+      //     }
+      //     else{
+      //       myStr = ""
+      //     }
+      //     console.log(myStr)
+      //   return myStr;
+      // }
+
+      //OR
+
+      //With help of recursion function
+
+      // function repeatStringNumTimes(str, num) {
+      //   if(num < 1){
+      //     return ""
+      //   }
+      //   return str+repeatStringNumTimes(str,num-1)
+      // }
+
+      //Or
+      // function repeatStringNumTimes(str, num) {
+      //   return num > 0 ? str + repeatStringNumTimes(str,num-1) : ""
+      // }
+
+      // repeatStringNumTimes("*", 4);
+
+      //4)Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+
+      // function truncateString(str, num) {
+      //   if(str.length>num){
+      //     return str.substring(num,str)+"..."
+      //   }
+      //   return str.substring(num,str);
+      // }
+
+      //OR
+
+      // function truncateString(str, num) {
+      //   return str.length > num ? str.substring(num,str)+"..." : str ;
+      // }
+
+      //OR
+
+      //Slice start with 0 till the number and return only that string
+
+      // function truncateString(str, num) {
+      //   return str.length > num ? str.slice(0, num) + "..." : str;
+      // }
+
+      // truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)
+
+      //5)Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
+
+      // function findElement(arr, func) {
+      // let evenNum
+      //   for(let i =0 ; i<arr.length;i++){
+      //     if(func(arr[i])){
+      //       evenNum = arr[i]
+      //       break;
+      //     }else{
+      //       evenNum = undefined
+      //     }
+      //   }
+      //   return evenNum
+      // }
+
+      //OR
+
+      // function findElement(arr, func) {
+      //   for(const e of arr){
+      //     if(func(e)){
+      //       return e
+      //     }
+      //   }
+      //   return undefined
+      // }
+
+      //OR
+
+      // function findElement(arr, func) {
+      //   return arr.find(e=>func(e))
+      // }
+
+      //With recursive function
+      // function findElement(arr, func) {
+      //   if(arr.length > 0 && !func(arr[0])){
+      //     return findElement(arr.slice(1),func)
+      //   }else{
+      //     return arr[0]
+      //   }
+      // }
+
+      // findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+      //6)Check if a value is classified as a boolean primitive. Return true or false. Boolean primitives are true and false.
+
+      // function booWho(bool) {
+      //   return typeof bool === "boolean";
+      // }
+
+      // booWho(null);
+
+      //7)Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.For the purpose of this exercise, you should also capitalize connecting words like the and of.
+
+      // function titleCase(str) {
+      //   let myStr = str.toLowerCase().split(" ")
+      //   let myArr = []
+      //   myStr.forEach((e)=>{
+      //     if(!e[0].match(/[A-Z]/)){
+      //      myArr.push(e[0].toUpperCase() + e.slice(1))
+      //     }
+      //   })
+      //   return myArr.join(" ")
+      // }
+
+      //OR
+      // function titleCase(str) {
+      //  return
+      //  str.toLowerCase()
+      //  .split(" ")
+      //  .map((e)=>e.replace(e.charAt(0),e.charAt(0).toUpperCase()))
+      //  .join(" ")
+      // }
+
+      // titleCase("I'm a little tea pot");
+
+      //8)You are given two arrays and an index.
+
+      // Copy each element of the first array into the second array, in order.
+
+      // Begin inserting elements at index n of the second array.
+
+      // Return the resulting array. The input arrays should remain the same after the function runs.
+
+      // function frankenSplice(arr1, arr2, n) {
+      //   let myArr2 = [...arr2]
+      //   let myArr1 = [...arr1].reverse()
+      //   for(let i=0;i<myArr1.length;i++){
+      //     myArr2.splice(n,0,myArr1[i])
+      //   }
+      //   return myArr2;
+      // }
+
+      //OR
+      // function frankenSplice(arr1, arr2, n) {
+      //   let myArr2 = [...arr2]
+      //   for(let i=0;i<arr1.length;i++){
+      //     myArr2.splice(n,0,arr1[i])
+      //     n++     //We don't need to do reverse now
+      //   }
+      //   return myArr2;
+      // }
+
+      //OR
+      // function frankenSplice(arr1, arr2, n) {
+      //   let myArr2 = [...arr2]
+      //    myArr2.splice(n,0,...arr1);
+      //   return myArr2
+      // }
+
+      // frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+      //9)Remove all falsy values from an array. Return a new array; do not mutate the original array.
+
+      // Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
+      // Hint: Try converting each value to a Boolean.
+
+      // function bouncer(arr) {
+      // const newArr = arr.filter((e)=>e) //Filter call back function always return boolean value
+      // return newArr;
+      // }
+
+      // bouncer([7, "ate", "", false, 9]);
+
+      //10) Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+
+      // For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+
+      // Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).
+
+      // function getIndexToIns(arr, num) {
+      //   arr.sort((a,b)=>a-b)
+      //   for(let i=0;i<arr.length;i++){
+      //     if(arr[i]>=num){
+      //       return i
+      //     }
+      //   }
+      //   return arr.length
+      // }
+
+      //OR
+      //In this solution first we will apply filter on the array and in this we will return the arrays length when it's starting to get bigger than our number
+
+      // function getIndexToIns(arr, num) {
+      //   return arr.filter(e=>e<num).length
+      // }
+
+      // getIndexToIns([40, 60], 50);
+
+      //11)Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+
+      // For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+
+      // The arguments ["hello", "hey"] should return false because the string hello does not contain a y.
+
+      // Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.
+
+      //Not follow this technique
+      // function mutation(arr) {
+      //   let firstArr = arr[0].toLowerCase().split("")
+      //   let secArr = arr[1].toLowerCase().split("")
+      //   let num
+      //   let newArr = []
+      //   for (let i=0;i<secArr.length;i++){
+      //      num = firstArr.indexOf(secArr[i])
+      //      if(num >= 0){
+      //       newArr.push(num)
+      //      }
+      //   }
+      //   console.log(newArr)
+      // return newArr.length === secArr.length ? true : false
+      // }
+
+      //Below code is not solution it's actually so what happened in this solution is that first it will check for first element 'h' and return true so by mean return it will directly go out from the loop and function and directly return true and it will never go for the check 'y' alphabet which is return false so overall it will return true asper only one alphabet check of the array so it's wrong
+
+      // function mutation(arr) {
+      //   let firstArr = arr[0].toLowerCase().split("")
+      //   let secArr = arr[1].toLowerCase().split("")
+
+      //   for(let i = 0;i < secArr.length;i++){
+      //     let num = firstArr.indexOf(secArr[i])
+      //     if(num !== -1){
+      //       return true
+      //     }
+      //   }
+      //   return false
+      // }
+
+      //OR
+
+      //So in this example we are checking that our each and single alphabet of the second array is present inside the first array or not....
+
+      //So in this case is what will happen is  whenever alphabet second array will not find in this first array it will return -1 that means our alphabet is not exist inside first array so it will directly return the false and stop the execution of the loop and return false from the function
+
+      //1) Converting array element into individual each array and then convert into lowecase
+      //2) then apply for loop onto the second array for checking each alphabet of second array is present inside the first array or not.
+
+      // function mutation(arr) {
+      //   let firstArr = arr[0].toLowerCase().split("")
+      //   let secArr = arr[1].toLowerCase().split("")
+
+      //   for(let i = 0;i < secArr.length;i++){
+      //     let num = firstArr.indexOf(secArr[i])
+      //     if(num === -1){
+      //       return false
+      //     }
+      //   }
+      //   return true
+      // }
+
+      //OR
+
+      // function mutation(arr) {
+      //   let firstArr = arr[0].toLowerCase().split("")
+      //   let secArr = arr[1].toLowerCase().split("")
+
+      //   for(let i = 0;i < secArr.length;i++){
+      //     if(firstArr.indexOf(secArr[i])< 0) return false
+      //   }
+      //   return true
+      // }
+
+      //OR
+
+      // function mutation(arr) {
+      // return arr[1]
+      // .toLowerCase()
+      // .split("")
+      // .every((e)=> arr[0]
+      // .toLowerCase().
+      // indexOf(e)!== -1)
+      // }
+
+      // mutation(["hello", "hey"]);
+      // mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])
+      // mutation(["hello", "Hello"])
+
+      //12)Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+
+      //So in the below answer we put "i" as it is in condition but we increase "i" inside for loop logic and with help of slice function we get forward with "i+=size" and get new "size" number of elements in new array as we know slice function return us that new array with upgraded value , so in first case it gives us [0,1,2] and in second it gives us[3,4,5] with help of "i+=size" which increase number of i at "size" number which in this case is 3 and we push in main array which is newArr.
+
+      // function chunkArrayInGroups(arr, size) {
+      //   let newArr = []
+      //   for (let i =0 ; i < arr.length ; i){
+      //     newArr.push(arr.slice(i,i+=size))
+      //   }
+      //  return newArr
+      // }
+
+      //OR
+      // function chunkArrayInGroups(arr, size) {
+      //   // Break it up.
+      //   const newArr = [];
+      //   for (let i = 0; i < arr.length; i += size) {
+      //     newArr.push(arr.slice(i, i + size));
+      //   }
+      //   return newArr;
+      // }
+
+      // chunkArrayInGroups(["a", "b", "c", "d"], 2);
+      // chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)
+      // chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)
+
+      //13)The following function is supposed to create a two-dimensional array with m rows and n columns of zeroes. Unfortunately, it's not producing the expected output because the row variable isn't being reinitialized (set back to an empty array) in the outer loop. Fix the code so it returns a correct 3x2 array of zeroes, which looks like [[0, 0], [0, 0], [0, 0]].
+
+      // function zeroArray(r, c) {
+      //   // Creates a 2-D array with m rows and n columns of zeroes
+      //   let newArray = [];
+      //   for (let i = 0; i < r; i++) {
+      //   let row = new Array();
+      //     for(let j=0;j < c ; j++){
+      //       row.push(0)
+      //     }
+      //   newArray.push(row)
+      //   }
+      //   return newArray
+      // }
+
+      // let matrix = zeroArray(3, 2);
+      // console.log(matrix);
+    </script>
+  </body>
+</html>

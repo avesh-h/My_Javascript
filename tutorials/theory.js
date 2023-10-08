@@ -17,15 +17,15 @@
 
 // Asynchronous behaviour example
 
-console.log("1");
+// console.log("1");
 
-console.log("2");
+// console.log("2");
 
-setTimeout(() => {
-  console.log("3");
-}, 2000);
+// setTimeout(() => {
+//   console.log("3");
+// }, 2000);
 
-console.log("4");
+// console.log("4");
 
 // JS Runtime parts
 
@@ -40,3 +40,19 @@ console.log("4");
 // process
 
 //SO in example first console 1 and 2 will go to the call stack and it will executed and removed from the callstack, when it recieve the timeout function it the callstack sees it will require time to resolve so it will give to the webApi , then callstack move to the next line of the code and console 4 will be executed and removed from the call stack , when the time will be resolve from the webapi of settimeout then the callback function that settimeout have it will move to the callback queue and event loop will see that there is some function in the callback queue that need to execute and callstack is empty so it will give to callstack and call stack execute that callback function code.
+
+// NOTE: in the javascript there is anathor queue in javascript called job queue the working of the job queue is that whenever any JS promise will resolved and give us the callback function for the data it will be go to the job queue so job queue always have callback regarding JS promises and callback queue has always callback regarding the WebAPI like setTimeout
+
+// Remember Event loop always give high priority to job queue and check is there code the execute in callstack and if then give second priority to check callback queue.
+
+// example:
+
+// setTimeout(() => {
+//   console.log("timeout 1st");
+// }, 0);
+
+// setTimeout(() => {
+//   console.log("timeout I am the second");
+// }, 2000);
+
+// Promise.resolve("Hey i'm in Job queue").then((data) => console.log(data));
