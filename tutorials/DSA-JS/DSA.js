@@ -124,22 +124,33 @@ const checkStr = (s, t) => {
 
 //Stock example
 const buyStock = (arr) => {
-  let profit = 0;
-  let currVal;
+  //First approach
+  // let profit = 0;
+  // let currVal;
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (currVal < arr[i + 1]) {
+  //     for (let j = i + 1; j < arr.length; j++) {
+  //       if (arr[j] - currVal > profit) {
+  //         profit = arr[j] - currVal;
+  //       }
+  //     }
+  //   } else {
+  //     currVal = arr[i];
+  //   }
+  // }
+  // return profit;
+
+  //optimized
+
+  let minStockPrize;
   for (let i = 0; i < arr.length; i++) {
-    if (currVal < arr[i + 1]) {
-      for (let j = i + 1; j < arr.length; j++) {
-        if (arr[j] - currVal > profit) {
-          profit = arr[j] - currVal;
-        }
-      }
-    } else {
-      currVal = arr[i];
+    if (minStockPrize > arr[i + 1]) {
+      minStockPrize = arr[i + 1];
     }
   }
-  return profit;
+  return minStockPrize;
 };
 
-// console.log(buyStock([7, 1, 5, 3, 6, 4]));
-console.log(buyStock([1, 2]));
+console.log(buyStock([7, 1, 5, 3, 6, 4]));
+// console.log(buyStock([1, 2]));
 // console.log(buyStock([7, 6, 4, 3, 1]));
