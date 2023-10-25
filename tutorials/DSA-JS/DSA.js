@@ -154,3 +154,95 @@ const buyStock = (arr) => {
 console.log(buyStock([7, 1, 5, 3, 6, 4]));
 // console.log(buyStock([1, 2]));
 // console.log(buyStock([7, 6, 4, 3, 1]));
+
+const secondLarge = (arr) => {
+  // approach 1:--------------------------------------------------------------
+  // const maxNum = Math.max(...arr);
+  // let secondLarge;
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (arr[i] < maxNum && arr[i] > arr[i - 1]) {
+  //     secondLarge = arr[i];
+  //   }
+  // }
+  // return secondLarge;
+  // app:2-----------------------------------------------------------------
+  // const uniquArr = [...new Set(arr)].sort((a, b) => b - a);
+  // return uniquArr[1];
+  //app:3------------------------------------------------------------------
+  // let largestNumber = Number.NEGATIVE_INFINITY;
+  // let secondLargest = Number.NEGATIVE_INFINITY;
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (arr[i] > largestNumber) {
+  //     secondLargest = largestNumber;
+  //     largestNumber = arr[i];
+  //   } else if (arr[i] !== largestNumber && arr[i] > secondLargest) {
+  //     secondLargest = arr[i];
+  //   }
+  // }
+  // return secondLargest;
+};
+
+// console.log(secondLarge([1, 1, 10, 12, 34, 35, 35]));
+
+//Kadanes Algorithm
+
+// find maximum total of the subarray from the array
+
+const maxSubArr = (arr) => {
+  // let maxSum = arr[0];
+  // let startInd = 0;
+  // let endInd = 0;
+  // for (let i = 0; i < arr.length; i++) {
+  //   let currentSum = 0;
+  //   for (let j = i; j < arr.length; j++) {
+  //     currentSum += arr[j];
+  //     if (currentSum > maxSum) {
+  //       maxSum = currentSum;
+  //       startInd = i;
+  //       endInd = j;
+  //     }
+  //   }
+  // }
+  // return {
+  //   maxSum,
+  //   arr: arr.slice(startInd, endInd + 1),
+  // };
+  //Optimized approach (kadane)
+  // let sum = 0;
+  // let maxSum = arr[0];
+  // for (let i = 0; i < arr.length; i++) {
+  //   sum += arr[i];
+  //   if (sum > maxSum) {
+  //     maxSum = sum;
+  //   } else if (sum < 0) {
+  //     sum = 0;
+  //   }
+  // }
+  // return maxSum;
+};
+
+console.log(maxSubArr([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// console.log(maxSubArr([5, 4, -1, 7, 8]));
+
+//The main differnce between of if else if and if and if
+
+const checkFunc = (bool) => {
+  // IF AND ELSE IF
+  // if (bool) {
+  //   console.log("check 1");
+  // } else if (bool) {
+  //   console.log("check 2");
+  // }
+  //IF AND IF
+  // if (bool) {
+  //   console.log("check 1");
+  // }
+  // if (bool) {
+  //   console.log("check 2");
+  // }
+};
+
+checkFunc(true);
+
+//after run this we can see if else if the value is true it will go to the first if and it will get true then it will never go inside to check for else if.
+//BUt in the case of if and if it will go the check for first if then gets true and then go to the second if the check the condition so that's the main difference here.
