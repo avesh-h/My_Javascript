@@ -44,11 +44,62 @@ class Stack {
 }
 
 const myStack = new Stack();
-myStack.push(9);
-myStack.push(40);
-myStack.push(5);
-myStack.push(8);
-console.log(myStack.size());
-console.log(myStack.printElements());
+// myStack.push(9);
+// myStack.push(40);
+// myStack.push(5);
+// myStack.push(8);
+// console.log(myStack.size());
+// console.log(myStack.printElements());
 // myStack.pop();
 // console.log(myStack.peek());
+
+// example
+
+// const reverseWords = (str) => {
+//   // const updatedStrArr = [...new Set(str.split(" "))].filter((e) => e);
+//   const stack = [];
+//   for (let i of str.split(" ")) {
+//     stack.push(i);
+//   }
+//   let finalS = "";
+//   while (stack.length) {
+//     const currEle = stack.pop();
+//     if (currEle) {
+//       finalS += " " + currEle;
+//     }
+//   }
+//   return finalS.trim();
+// };
+// console.log(reverseWords("the  sky is  blue "));
+
+// -----------------QUestion
+const bracesFunc = (s) => {
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (char === "(" || char === "{" || char === "[") {
+      stack.push(char);
+    } else if (char === ")" || char === "]" || char === "}") {
+      if (isEmpty(stack)) {
+        return false;
+      }
+      const top = stack.pop();
+      if (
+        (char === ")" && top !== "(") ||
+        (char === "]" && top !== "[") ||
+        (char === "}" && top !== "{")
+      ) {
+        return false;
+      }
+    }
+  }
+  return isEmpty(stack);
+};
+
+//for check stack length
+function isEmpty(stack) {
+  return stack.length === 0;
+}
+
+console.log(bracesFunc("([]{})"));
