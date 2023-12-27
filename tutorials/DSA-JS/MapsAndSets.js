@@ -106,10 +106,71 @@ for (let value of extraData.values()) {
 
 if (extraData.has(obj3.id)) {
   extraData.delete("microsoft");
+
+  // console.log(extraData);
+
+  //WeakSet and WeakMap
+
+  // There's also something known as weakmap and weakset and the main differnce is than set and map is that map and set data is always stored in garbage collection and it requires memory to store, so weakmap and weakset doesn't hold up the data and javascript automatically released or delete from the garbage collection.
 }
 
-// console.log(extraData);
+//------------------SET examples
 
-//WeakSet and WeakMap
+// Example:1
+// const interSection = (setA, setB) => {
+//   const commonSet = new Set();
+//   for (let element of setB) {
+//     if (setA.has(element)) {
+//       commonSet.add(element);
+//     }
+//   }
+//   return [...commonSet];
+// };
 
-// There's also something known as weakmap and weakset and the main differnce is than set and map is that map and set data is always stored in garbage collection and it requires memory to store, so weakmap and weakset doesn't hold up the data and javascript automatically released or delete from the garbage collection.
+// const setA = new Set([2, 3, 4, 5, 12, 5, 8, 77]);
+// const setB = new Set([2, 55, 77, 8]);
+// console.log("interSection", interSection(setA, setB));
+
+// Example:2
+// const isSuperSet = (setA, setB) => {
+//   for (let element of setB) {
+//     if (!setA.has(element)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+// const set1 = new Set([2, 3, 4, 5, 12, 5, 8, 77]);
+// const set2 = new Set([2, 5, 77, 8]);
+// console.log("isSuperSet", isSuperSet(set1, set2));
+
+// Example:3
+
+// const unionSet = (setA, setB) => {
+//   // const mainSet = new Set([...setA, ...setB]);
+//   let mainSet = new Set(setA);
+//   for (let elem of setB) {
+//     if (!setA.has(elem)) {
+//       mainSet.add(elem);
+//     }
+//   }
+//   return [...mainSet];
+//   // return mainSet;
+// };
+
+// console.log("unionSet", unionSet(new Set([1, 2, 3, 4]), new Set([3, 4, 5, 6])));
+
+// Example:4
+
+// const differnceSet = (setA, setB) => {
+//   const finalSet = new Set(setA);
+//   for (let elem of setB) {
+//     if (finalSet.has(elem)) {
+//       finalSet.delete(elem);
+//     }
+//   }
+//   return [...finalSet];
+// };
+
+// console.log(differnceSet(new Set([1, 2, 3, 4]), new Set([2, 3])));

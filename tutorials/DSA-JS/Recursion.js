@@ -120,3 +120,23 @@
 //   return convertToBinary(Math.floor(num / 2)) + (num % 2);
 // };
 // console.log(convertToBinary(25));
+
+// -------------------------------Quick SOrt with recursion-------------------------
+// const quickSort = (arr) => {
+//   if (arr.length < 2) {
+//     return arr;
+//   }
+//   const subRight = [];
+//   const subLeft = [];
+//   const pivotElement = arr[arr.length - 1];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < pivotElement) {
+//       subLeft.push(arr[i]);
+//     } else if (arr[i] > pivotElement) {
+//       subRight.push(arr[i]);
+//     }
+//   }
+//   return [...quickSort(subLeft), pivotElement, ...quickSort(subRight)];
+// };
+
+// console.log(quickSort([-6, 20, 8, -2, 4]));
